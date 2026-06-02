@@ -1,0 +1,29 @@
+name: Release
+
+# Triggers on every `v*` tag. Zenodo's GitHub webhook listens for the
+# resulting GitHub Release and auto-mints a version DOI under the registry's
+# concept DOI.
+#
+# Registry releases archive the source YAML in this repository. Generated JSONL
+# dumps are built by `textrefs/textrefs.org` from its pinned `data/` submodule
+# pointer and attached to the corresponding Standard/site release.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Create GitHub Release (source archive)
+        uses: softprops/action-gh-release@v3
+        with:
+          generate_release_notes: true

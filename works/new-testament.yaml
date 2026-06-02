@@ -1,0 +1,76 @@
+work:
+  key: new-testament
+  preferred_label: New Testament
+  status: candidate
+  created: 2026-05-31
+  modified: 2026-06-03
+
+citation_system: bible-book-chapter-verse
+
+mappings:
+  - relation: exactMatch
+    target_kind: wikidata
+    identifier: 'https://www.wikidata.org/entity/Q18813'
+    source: manual-curation
+    status: candidate
+    created: 2026-05-31
+    modified: 2026-05-31
+  - relation: closeMatch
+    target_kind: wikipedia
+    identifier: 'https://en.wikipedia.org/wiki/New_Testament'
+    source: 'wikidata:Q18813'
+    status: candidate
+    created: 2026-06-02
+    modified: 2026-06-02
+
+resolvers:
+  - provider: STEP Bible
+    edition: SBL Greek New Testament
+    language: grc
+    access: open
+    license: CC-BY-4.0
+    license_url: 'https://sblgnt.com/license/'
+    url: 'https://www.stepbible.org/?q=version=SBLG%7Creference={book}.{chapter}.{verse}'
+    last_checked: '2026-06-03'
+
+  - provider: Wikisource
+    edition: 'King James Version (1769 Blayney)'
+    language: en
+    access: open
+    license: CC-BY-SA-4.0
+    # Per-chapter pages with per-verse anchors `#{verse}`. Single-word OSIS
+    # book names (e.g. John, Matthew, Romans) match KJV page slugs on
+    # en.wikisource directly; multi-token books (1Corinthians etc.) will need
+    # a name-mapping layer when added to `references_range`.
+    url: 'https://en.wikisource.org/wiki/Bible_(King_James)/{book}/Chapter_{chapter}#{verse}'
+    last_checked: '2026-06-03'
+
+# John verse counts per chapter (NA28 / SBLGNT). Other NT books to be added
+# incrementally.
+references_range:
+  - kind: book_chapter_verse
+    book: John
+    counts:
+      [
+        51,
+        25,
+        36,
+        54,
+        47,
+        71,
+        53,
+        59,
+        41,
+        42,
+        57,
+        50,
+        38,
+        31,
+        27,
+        33,
+        26,
+        40,
+        42,
+        31,
+        25,
+      ]

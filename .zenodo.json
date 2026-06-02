@@ -1,0 +1,38 @@
+{
+  "title": "TextRefs Registry",
+  "description": "Hand-authored seed registry data for TextRefs: works, citation systems, canonical references, and mapping assertions. Released under CC0-1.0.",
+  "upload_type": "dataset",
+  "license": "CC0-1.0",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Mähr, Moritz",
+      "affiliation": "TextRefs",
+      "orcid": "0000-0002-1367-1618"
+    },
+    {
+      "name": "Seiberth, Luz Christopher",
+      "affiliation": "TextRefs"
+    }
+  ],
+  "communities": [{ "identifier": "textrefs" }],
+  "keywords": [
+    "canonical text references",
+    "citation",
+    "JSON-LD",
+    "open research infrastructure",
+    "persistent identifiers"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://textrefs.org/standard/",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-standard"
+    },
+    {
+      "identifier": "https://github.com/textrefs/textrefs.org",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

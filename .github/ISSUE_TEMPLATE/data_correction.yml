@@ -1,0 +1,47 @@
+name: Data correction or mapping proposal
+description: Report incorrect registry data, propose a mapping, or suggest a status change.
+title: 'data: '
+labels: [data, triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for registry-only changes: works, citation systems, references, mappings, aliases, and resolver targets.
+        Please provide public evidence so reviewers can verify the claim.
+  - type: input
+    id: target
+    attributes:
+      label: Affected file, TextRefs ID, or URL
+      description: Use a path under `works/` or `systems/`, a TextRefs ID, or a site URL.
+      placeholder: works/dhammapada.yaml or https://textrefs.org/id/work/dhammapada/
+    validations:
+      required: true
+  - type: input
+    id: citation-system
+    attributes:
+      label: Citation system
+      description: Stephanus, Bekker, Dhammapada chapter-and-verse, SBL, Vulgate, Aquinas, etc.
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong or missing?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested correction or new value
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and sources
+      description: Editions, page numbers, URLs, Wikidata QIDs, CTS URNs, or other public references.
+    validations:
+      required: true
+  - type: input
+    id: rights
+    attributes:
+      label: Rights or licence note
+      description: For external links and identifiers, note whether the source is open, paywalled, or otherwise restricted.

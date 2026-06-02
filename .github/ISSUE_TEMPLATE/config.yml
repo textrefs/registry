@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: General TextRefs questions
+    url: https://github.com/textrefs/textrefs.org/discussions
+    about: Ask general questions in the main TextRefs discussions space.
+  - name: Security vulnerabilities
+    url: https://github.com/textrefs/textrefs.org/security/advisories/new
+    about: Report security issues privately in the main repository. Do not open a public issue.

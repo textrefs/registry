@@ -1,0 +1,84 @@
+work:
+  key: confucius.analects
+  preferred_label: Analects
+  status: candidate
+  created: 2026-05-31
+  modified: 2026-06-03
+  creators:
+    - kind: person
+      family: Confucius
+
+citation_system: analects-book-chapter
+
+mappings:
+  - relation: exactMatch
+    target_kind: wikidata
+    identifier: 'https://www.wikidata.org/entity/Q276015'
+    source: manual-curation
+    status: candidate
+    created: 2026-05-31
+    modified: 2026-06-02
+  - relation: closeMatch
+    target_kind: wikipedia
+    identifier: 'https://en.wikipedia.org/wiki/Analects'
+    source: 'wikidata:Q276015'
+    status: candidate
+    created: 2026-06-02
+    modified: 2026-06-02
+
+resolvers:
+  - provider: Chinese Text Project
+    edition: 'Lunyu (傳世本)'
+    language: lzh
+    access: open
+    last_checked: '2026-06-03'
+    url_by:
+      book:
+        1: 'https://ctext.org/analects/xue-er'
+        2: 'https://ctext.org/analects/wei-zheng'
+        3: 'https://ctext.org/analects/ba-yi'
+        4: 'https://ctext.org/analects/li-ren'
+        5: 'https://ctext.org/analects/gong-ye-chang'
+        6: 'https://ctext.org/analects/yong-ye'
+        7: 'https://ctext.org/analects/shu-er'
+        8: 'https://ctext.org/analects/tai-bo'
+        9: 'https://ctext.org/analects/zi-han'
+        10: 'https://ctext.org/analects/xiang-dang'
+        11: 'https://ctext.org/analects/xian-jin'
+        12: 'https://ctext.org/analects/yan-yuan'
+        13: 'https://ctext.org/analects/zi-lu'
+        14: 'https://ctext.org/analects/xian-wen'
+        15: 'https://ctext.org/analects/wei-ling-gong'
+        16: 'https://ctext.org/analects/ji-shi'
+        17: 'https://ctext.org/analects/yang-huo'
+        18: 'https://ctext.org/analects/wei-zi'
+        19: 'https://ctext.org/analects/zi-zhang'
+        20: 'https://ctext.org/analects/yao-yue'
+
+# Per-book chapter counts (Yang Bojun / Legge tradition, with minor variant
+# divisions). Expands to 517 references across 20 books.
+references_range:
+  - kind: book_chapter
+    counts:
+      [
+        16,
+        24,
+        26,
+        26,
+        28,
+        30,
+        38,
+        21,
+        31,
+        27,
+        26,
+        24,
+        30,
+        47,
+        42,
+        14,
+        26,
+        11,
+        25,
+        5,
+      ]

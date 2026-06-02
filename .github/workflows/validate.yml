@@ -1,0 +1,46 @@
+name: Validate
+
+# Registry contributions are validated against the parent (textrefs.org)
+# schema + compiler: this job checks out parent/main, replaces its `data/`
+# with the registry PR ref, and runs the parent's validate+compile scripts.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout parent (textrefs.org)
+        uses: actions/checkout@v6
+        with:
+          repository: textrefs/textrefs.org
+          ref: main
+          path: parent
+
+      - name: Remove placeholder data/ dir
+        run: rm -rf parent/data
+
+      - name: Checkout registry PR ref into parent/data
+        uses: actions/checkout@v6
+        with:
+          path: parent/data
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - run: npm ci
+        working-directory: parent
+
+      - run: npm run validate:data
+        working-directory: parent
+
+      - run: npm run compile:data
+        working-directory: parent

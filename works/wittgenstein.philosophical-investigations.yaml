@@ -1,0 +1,60 @@
+work:
+  key: wittgenstein.philosophical-investigations
+  preferred_label: Philosophical Investigations
+  status: candidate
+  created: 2026-06-02
+  modified: 2026-06-03
+  creators:
+    - kind: person
+      family: Wittgenstein
+      given: Ludwig
+
+citation_system: integer-section
+
+mappings:
+  - relation: exactMatch
+    target_kind: wikidata
+    identifier: 'https://www.wikidata.org/entity/Q772496'
+    source: manual-curation
+    status: candidate
+    created: 2026-06-02
+    modified: 2026-06-02
+  - relation: closeMatch
+    target_kind: wikipedia
+    identifier: 'https://en.wikipedia.org/wiki/Philosophical_Investigations'
+    source: manual-curation
+    status: candidate
+    created: 2026-06-02
+    modified: 2026-06-02
+
+resolvers:
+  - provider: The Ludwig Wittgenstein Project
+    edition: 'Philosophische Untersuchungen, Suhrkamp Werkausgabe (1999) reproduction'
+    language: de
+    access: open
+    url: 'https://www.wittgensteinproject.org/w/index.php/Philosophische_Untersuchungen#{section}'
+    last_checked: '2026-06-03'
+  - provider: The Ludwig Wittgenstein Project
+    edition: 'Investigaciones filosóficas, Spanish translation (edición A) reproduction'
+    language: es
+    access: open
+    url: 'https://www.wittgensteinproject.org/w/index.php/Investigaciones_filosóficas_(edición_A)#{section}'
+    last_checked: '2026-06-03'
+  - provider: The Ludwig Wittgenstein Project
+    edition: 'Investigaciones filosóficas, Spanish translation (edición B) reproduction'
+    language: es
+    access: open
+    url: 'https://www.wittgensteinproject.org/w/index.php/Investigaciones_filosóficas_(edición_B)#{section}'
+    last_checked: '2026-06-03'
+  - provider: The Ludwig Wittgenstein Project
+    edition: 'Philosophical Investigations, Hindi translation reproduction'
+    language: hi
+    access: open
+    url: 'https://www.wittgensteinproject.org/w/index.php/फ़िलोसॉफ़िकल_इन्वेस्टिगेशंस#{section}'
+    last_checked: '2026-06-03'
+
+# The Ludwig Wittgenstein Project page exposes anchors for §§1-693.
+references_range:
+  - kind: integer
+    from: 1
+    to: 693

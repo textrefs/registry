@@ -1,0 +1,101 @@
+work:
+  key: murasaki-shikibu.genji
+  preferred_label: The Tale of Genji
+  status: candidate
+  created: 2026-05-31
+  modified: 2026-06-03
+  creators:
+    - kind: person
+      family: Murasaki Shikibu
+
+citation_system: genji-chapter
+
+mappings:
+  - relation: exactMatch
+    target_kind: wikidata
+    identifier: 'https://www.wikidata.org/entity/Q8269'
+    source: manual-curation
+    status: candidate
+    created: 2026-05-31
+    modified: 2026-06-02
+  - relation: closeMatch
+    target_kind: wikipedia
+    identifier: 'https://en.wikipedia.org/wiki/The_Tale_of_Genji'
+    source: 'wikidata:Q8269'
+    status: candidate
+    created: 2026-06-02
+    modified: 2026-06-02
+
+# The NINJAL transcription site exposes per-chapter pages but with
+# non-templatable URL slugs; resolvers can be added later via url_by.
+resolvers:
+  - provider: Wikisource
+    edition: 'Genji monogatari, Shibuya Eiichi edition (源氏物語 渋谷栄一校訂)'
+    language: ja
+    access: open
+    license: CC-BY-SA-4.0
+    # Per-chapter pages keyed by the chapter's kanji name in the Aobyōshi
+    # sequence (1: 桐壺 … 54: 夢浮橋). Slugs are not derivable from the
+    # numeric chapter capture, so each is listed explicitly.
+    last_checked: '2026-06-03'
+    url_by:
+      chapter:
+        1: 'https://ja.wikisource.org/wiki/源氏物語/桐壺'
+        2: 'https://ja.wikisource.org/wiki/源氏物語/帚木'
+        3: 'https://ja.wikisource.org/wiki/源氏物語/空蝉'
+        4: 'https://ja.wikisource.org/wiki/源氏物語/夕顔'
+        5: 'https://ja.wikisource.org/wiki/源氏物語/若紫'
+        6: 'https://ja.wikisource.org/wiki/源氏物語/末摘花'
+        7: 'https://ja.wikisource.org/wiki/源氏物語/紅葉賀'
+        8: 'https://ja.wikisource.org/wiki/源氏物語/花宴'
+        9: 'https://ja.wikisource.org/wiki/源氏物語/葵'
+        10: 'https://ja.wikisource.org/wiki/源氏物語/賢木'
+        11: 'https://ja.wikisource.org/wiki/源氏物語/花散里'
+        12: 'https://ja.wikisource.org/wiki/源氏物語/須磨'
+        13: 'https://ja.wikisource.org/wiki/源氏物語/明石'
+        14: 'https://ja.wikisource.org/wiki/源氏物語/澪標'
+        15: 'https://ja.wikisource.org/wiki/源氏物語/蓬生'
+        16: 'https://ja.wikisource.org/wiki/源氏物語/関屋'
+        17: 'https://ja.wikisource.org/wiki/源氏物語/絵合'
+        18: 'https://ja.wikisource.org/wiki/源氏物語/松風'
+        19: 'https://ja.wikisource.org/wiki/源氏物語/薄雲'
+        20: 'https://ja.wikisource.org/wiki/源氏物語/朝顔'
+        21: 'https://ja.wikisource.org/wiki/源氏物語/乙女'
+        22: 'https://ja.wikisource.org/wiki/源氏物語/玉鬘'
+        23: 'https://ja.wikisource.org/wiki/源氏物語/初音'
+        24: 'https://ja.wikisource.org/wiki/源氏物語/胡蝶'
+        25: 'https://ja.wikisource.org/wiki/源氏物語/蛍'
+        26: 'https://ja.wikisource.org/wiki/源氏物語/常夏'
+        27: 'https://ja.wikisource.org/wiki/源氏物語/篝火'
+        28: 'https://ja.wikisource.org/wiki/源氏物語/野分'
+        29: 'https://ja.wikisource.org/wiki/源氏物語/行幸'
+        30: 'https://ja.wikisource.org/wiki/源氏物語/藤袴'
+        31: 'https://ja.wikisource.org/wiki/源氏物語/真木柱'
+        32: 'https://ja.wikisource.org/wiki/源氏物語/梅枝'
+        33: 'https://ja.wikisource.org/wiki/源氏物語/藤裏葉'
+        34: 'https://ja.wikisource.org/wiki/源氏物語/若菜上'
+        35: 'https://ja.wikisource.org/wiki/源氏物語/若菜下'
+        36: 'https://ja.wikisource.org/wiki/源氏物語/柏木'
+        37: 'https://ja.wikisource.org/wiki/源氏物語/横笛'
+        38: 'https://ja.wikisource.org/wiki/源氏物語/鈴虫'
+        39: 'https://ja.wikisource.org/wiki/源氏物語/夕霧'
+        40: 'https://ja.wikisource.org/wiki/源氏物語/御法'
+        41: 'https://ja.wikisource.org/wiki/源氏物語/幻'
+        42: 'https://ja.wikisource.org/wiki/源氏物語/匂兵部卿'
+        43: 'https://ja.wikisource.org/wiki/源氏物語/紅梅'
+        44: 'https://ja.wikisource.org/wiki/源氏物語/竹河'
+        45: 'https://ja.wikisource.org/wiki/源氏物語/橋姫'
+        46: 'https://ja.wikisource.org/wiki/源氏物語/椎本'
+        47: 'https://ja.wikisource.org/wiki/源氏物語/総角'
+        48: 'https://ja.wikisource.org/wiki/源氏物語/早蕨'
+        49: 'https://ja.wikisource.org/wiki/源氏物語/宿木'
+        50: 'https://ja.wikisource.org/wiki/源氏物語/東屋'
+        51: 'https://ja.wikisource.org/wiki/源氏物語/浮舟'
+        52: 'https://ja.wikisource.org/wiki/源氏物語/蜻蛉'
+        53: 'https://ja.wikisource.org/wiki/源氏物語/手習'
+        54: 'https://ja.wikisource.org/wiki/源氏物語/夢浮橋'
+
+references_range:
+  - kind: integer
+    from: 1
+    to: 54

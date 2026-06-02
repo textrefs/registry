@@ -1,0 +1,45 @@
+work:
+  key: plato.republic
+  preferred_label: Republic
+  status: candidate
+  created: 2026-05-31
+  modified: 2026-06-03
+  creators:
+    - kind: person
+      family: Plato
+
+citation_system: stephanus
+
+mappings:
+  - relation: exactMatch
+    target_kind: wikidata
+    identifier: 'https://www.wikidata.org/entity/Q123397'
+    source: manual-curation
+    status: candidate
+    created: 2026-05-31
+    modified: 2026-06-02
+  - relation: closeMatch
+    target_kind: wikipedia
+    identifier: 'https://en.wikipedia.org/wiki/Republic_(Plato)'
+    source: 'wikidata:Q123397'
+    status: candidate
+    created: 2026-06-02
+    modified: 2026-06-02
+
+resolvers:
+  - provider: Perseus Digital Library
+    edition: 'Plato, Republic (Burnet, OCT)'
+    language: grc
+    access: open
+    license: CC-BY-SA-3.0
+    license_url: 'https://www.perseus.tufts.edu/hopper/about/copyright'
+    # Perseus accepts the short citation form "Plat. Rep. {page}{section}" in
+    # the `doc` query. Sub-line is not addressable; resolver lands on the
+    # Stephanus section.
+    url: 'https://www.perseus.tufts.edu/hopper/text?doc=Plat.+Rep.+{page}{section}'
+    last_checked: '2026-06-03'
+
+# Republic spans 327a–621d; all five sections per page → 1,475 references.
+references_range:
+  - kind: stephanus
+    page_range: [327, 621]
