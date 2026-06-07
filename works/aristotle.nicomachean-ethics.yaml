@@ -32,7 +32,7 @@ resolvers:
     language: grc
     access: open
     license: CC-BY-SA-3.0
-    license_url: 'https://www.perseus.tufts.edu/hopper/about/copyright'
+    license_url: 'https://www.perseus.tufts.edu/hopper/opensource'
     # Perseus accepts the short citation form "Aristot. Nic. Eth. {page}{column}"
     # in the `doc` query; lands on the Bekker column. Line is not addressable.
     url: 'https://www.perseus.tufts.edu/hopper/text?doc=Aristot.+Nic.+Eth.+{page}{column}'

@@ -32,7 +32,7 @@ resolvers:
     language: grc
     access: open
     license: CC-BY-SA-3.0
-    license_url: 'https://www.perseus.tufts.edu/hopper/about/copyright'
+    license_url: 'https://www.perseus.tufts.edu/hopper/opensource'
     # Perseus accepts the short citation form "Plat. Rep. {page}{section}" in
     # the `doc` query. Sub-line is not addressable; resolver lands on the
     # Stephanus section.
