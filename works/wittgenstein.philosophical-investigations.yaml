@@ -13,14 +13,14 @@ citation_system: integer-section
 
 mappings:
   - relation: exactMatch
-    target_kind: wikidata
+    conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q772496'
     source: manual-curation
     status: candidate
     created: 2026-06-02
     modified: 2026-06-02
   - relation: closeMatch
-    target_kind: wikipedia
+    conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/Philosophical_Investigations'
     source: manual-curation
     status: candidate

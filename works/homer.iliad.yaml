@@ -12,14 +12,14 @@ citation_system: homer-book-line
 
 mappings:
   - relation: exactMatch
-    target_kind: wikidata
+    conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q8275'
     source: manual-curation
     status: candidate
     created: 2026-05-31
     modified: 2026-05-31
   - relation: closeMatch
-    target_kind: wikipedia
+    conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/Iliad'
     source: 'wikidata:Q8275'
     status: candidate
@@ -34,6 +34,16 @@ resolvers:
     license: CC-BY-SA-4.0
     url: 'https://scaife.perseus.org/reader/urn:cts:greekLit:tlg0012.tlg001.perseus-grc2:{book}.{line}/'
     last_checked: '2026-06-03'
+  - provider: Perseus Digital Library
+    edition: 'Homer, Iliad (Monro & Allen, OCT)'
+    language: grc
+    access: open
+    license: CC-BY-SA-3.0
+    license_url: 'https://www.perseus.tufts.edu/hopper/opensource'
+    # Perseus accepts the short citation form "Hom. Il. {book}.{line}" in the
+    # `doc` query.
+    url: 'https://www.perseus.tufts.edu/hopper/text?doc=Hom.+Il.+{book}.{line}'
+    last_checked: '2026-06-09'
 
 # Per-book line counts (Allen OCT). The compiler expands these into
 # `1.1` … `24.804` — 15,693 references.
