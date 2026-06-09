@@ -37,6 +37,19 @@ resolvers:
     # in the `doc` query; lands on the Bekker column. Line is not addressable.
     url: 'https://www.perseus.tufts.edu/hopper/text?doc=Aristot.+Nic.+Eth.+{page}{column}'
     last_checked: '2026-06-03'
+  - provider: Project Gutenberg
+    edition: 'The Nicomachean Ethics of Aristotle'
+    language: en
+    access: open
+    license: 'public-domain'
+    # Coarse landing-page fallback: the Ross translation is a single ebook
+    # with no Bekker anchor, so the URL has no locator placeholders and
+    # resolves to the same page for every reference. The Perseus
+    # canonical-greekLit edition is indexed by Bywater book.section, not
+    # Bekker page+column, so a Scaife CTS URN cannot be derived from a
+    # Bekker locator alone.
+    url: 'https://www.gutenberg.org/ebooks/8438'
+    last_checked: '2026-06-09'
 
 # Page ranges by book: I 1094a–1103a, II 1103a–1109b, III 1109b–1119b,
 # IV 1119b–1128b, V 1129a–1138b, VI 1138b–1145a, VII 1145a–1154b,

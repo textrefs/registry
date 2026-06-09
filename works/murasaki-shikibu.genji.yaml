@@ -94,6 +94,17 @@ resolvers:
         52: 'https://ja.wikisource.org/wiki/源氏物語/蜻蛉'
         53: 'https://ja.wikisource.org/wiki/源氏物語/手習'
         54: 'https://ja.wikisource.org/wiki/源氏物語/夢浮橋'
+  - provider: Project Gutenberg
+    edition: 'Japanese Literature (anthology incl. Genji Monogatari selections, transl. Suematsu Kenchō)'
+    language: en
+    access: open
+    license: 'public-domain'
+    # Coarse landing-page fallback: the Suematsu translation appears as a
+    # section of PG 19264 (Wilson, ed., *Japanese Literature*) with no
+    # per-chapter anchor, so the URL has no locator placeholders and
+    # resolves to the same page for every reference.
+    url: 'https://www.gutenberg.org/ebooks/19264'
+    last_checked: '2026-06-09'
 
 references_range:
   - kind: integer

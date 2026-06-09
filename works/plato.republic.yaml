@@ -38,6 +38,19 @@ resolvers:
     # Stephanus section.
     url: 'https://www.perseus.tufts.edu/hopper/text?doc=Plat.+Rep.+{page}{section}'
     last_checked: '2026-06-03'
+  - provider: Project Gutenberg
+    edition: 'The Republic, transl. Benjamin Jowett'
+    language: en
+    access: open
+    license: 'public-domain'
+    # Coarse landing-page fallback: the Jowett translation is a single ebook
+    # with no Stephanus anchor, so the URL has no locator placeholders and
+    # resolves to the same page for every reference. The Perseus
+    # canonical-greekLit edition exposes only integer Stephanus pages under
+    # a book prefix (no `a`–`e` section letter), so a Scaife CTS URN cannot
+    # be derived from the Stephanus locator without losing the section.
+    url: 'https://www.gutenberg.org/ebooks/1497'
+    last_checked: '2026-06-09'
 
 # Republic spans 327a–621d; all five sections per page → 1,475 references.
 references_range:
