@@ -13,14 +13,14 @@ citation_system: tractatus-proposition
 
 mappings:
   - relation: exactMatch
-    target_kind: wikidata
+    conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q655717'
     source: manual-curation
     status: candidate
     created: 2026-06-02
     modified: 2026-06-02
   - relation: closeMatch
-    target_kind: wikipedia
+    conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/Tractatus_Logico-Philosophicus'
     source: manual-curation
     status: candidate
