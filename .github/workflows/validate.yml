@@ -1,8 +1,13 @@
 name: Validate
 
 # Registry contributions are validated against the parent (textrefs.org)
-# schema + compiler: this job checks out parent/main, replaces its `data/`
+# schema + compiler: this job checks out parent/staging, replaces its `data/`
 # with the registry PR ref, and runs the parent's validate+compile scripts.
+#
+# staging (not main) is the integration branch: registry data flows into
+# textrefs.org staging via submodule bumps, and main only consumes pinned
+# SHAs at release time. Validating against main would leave every
+# coordinated schema+data change red until the next release.
 
 on:
   pull_request:
@@ -21,7 +26,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: textrefs/textrefs.org
-          ref: main
+          ref: staging
           path: parent
 
       - name: Remove placeholder data/ dir
