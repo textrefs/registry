@@ -1,9 +1,9 @@
 work:
   key: new-testament
   preferred_label: New Testament
-  status: candidate
+  status: draft
   created: 2026-05-31
-  modified: 2026-06-03
+  modified: 2026-07-05
 
 citation_system: bible-book-chapter-verse
 
@@ -12,16 +12,16 @@ mappings:
     conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q18813'
     source: manual-curation
-    status: candidate
+    status: draft
     created: 2026-05-31
-    modified: 2026-05-31
+    modified: 2026-07-05
   - relation: closeMatch
     conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/New_Testament'
     source: 'wikidata:Q18813'
-    status: candidate
+    status: draft
     created: 2026-06-02
-    modified: 2026-06-02
+    modified: 2026-07-05
 
 resolvers:
   - provider: STEP Bible

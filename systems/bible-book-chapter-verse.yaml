@@ -6,6 +6,6 @@ description: >-
   starting with a letter; no spaces). Both the Hebrew Bible and the New
   Testament cite with this grammar.
 locator_regex: '^(?<book>[A-Za-z][A-Za-z0-9_]*)\.(?<chapter>[1-9][0-9]*)\.(?<verse>[1-9][0-9]*)$'
-status: candidate
+status: draft
 created: 2026-05-31
 modified: 2026-07-05

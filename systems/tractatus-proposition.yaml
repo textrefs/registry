@@ -4,6 +4,6 @@ description: >-
   The Tractatus is cited by proposition numbers such as 1, 2.0121, 6.54, 7.
   The regex checks locator shape only; the work enumerates the sparse set.
 locator_regex: '^(?<proposition>[1-7](?:\.[0-9]{1,5})?)$'
-status: candidate
+status: draft
 created: 2026-06-02
 modified: 2026-07-05

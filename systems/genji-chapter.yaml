@@ -5,6 +5,6 @@ description: >-
   Aobyōshi (青表紙本) sequence followed by most modern editions; cited by
   chapter number.
 locator_regex: '^(?<chapter>[1-9]|[1-4][0-9]|5[0-4])$'
-status: candidate
+status: draft
 created: 2026-05-31
 modified: 2026-07-05
