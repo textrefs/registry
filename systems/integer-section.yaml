@@ -1,19 +1,9 @@
 key: integer-section
 preferred_label: Integer section numbering
-normalization_version: 1.0.0
-# Generic integer section locators. Exact work-specific bounds are enforced by
-# registered CanonicalReference records, not by this shape check.
+description: >-
+  Generic integer section locators. Exact work-specific bounds are enforced
+  by registered CanonicalReference records, not by this shape check.
 locator_regex: '^(?<section>[1-9][0-9]*)$'
-examples:
-  valid:
-    - '1'
-    - '23'
-    - '693'
-  invalid:
-    - '0'
-    - '001'
-    - '1.1'
-    - 'section1'
 status: candidate
 created: 2026-06-02
-modified: 2026-06-02
+modified: 2026-07-05
