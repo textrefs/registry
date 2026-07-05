@@ -28,7 +28,8 @@ resolvers:
     edition: Sefaria base Hebrew/English
     language: en
     access: open
-    license: CC-BY
+    # Sefaria licensing varies per text (CC-BY / CC-BY-SA / PD); `CC-BY`
+    # alone is not an SPDX id, so only license_url is recorded.
     license_url: 'https://www.sefaria.org/terms'
     url: 'https://www.sefaria.org/{book}.{chapter}.{verse}'
     last_checked: '2026-06-03'

@@ -98,7 +98,9 @@ resolvers:
     edition: 'Japanese Literature (anthology incl. Genji Monogatari selections, transl. Suematsu Kenchō)'
     language: en
     access: open
-    license: 'public-domain'
+    # Public domain in the USA per Project Gutenberg; not an SPDX id, so
+    # only license_url is recorded (spec: omit `license` for non-SPDX).
+    license_url: 'https://www.gutenberg.org/policy/license.html'
     # Coarse landing-page fallback: the Suematsu translation appears as a
     # section of PG 19264 (Wilson, ed., *Japanese Literature*) with no
     # per-chapter anchor, so the URL has no locator placeholders and
