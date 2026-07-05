@@ -4,6 +4,6 @@ description: >-
   Generic integer section locators. Exact work-specific bounds are enforced
   by registered CanonicalReference records, not by this shape check.
 locator_regex: '^(?<section>[1-9][0-9]*)$'
-status: candidate
+status: draft
 created: 2026-06-02
 modified: 2026-07-05

@@ -1,9 +1,9 @@
 work:
   key: plato.republic
   preferred_label: Republic
-  status: candidate
+  status: draft
   created: 2026-05-31
-  modified: 2026-06-03
+  modified: 2026-07-05
   creators:
     - kind: person
       family: Plato
@@ -15,16 +15,16 @@ mappings:
     conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q123397'
     source: manual-curation
-    status: candidate
+    status: draft
     created: 2026-05-31
-    modified: 2026-06-02
+    modified: 2026-07-05
   - relation: closeMatch
     conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/Republic_(Plato)'
     source: 'wikidata:Q123397'
-    status: candidate
+    status: draft
     created: 2026-06-02
-    modified: 2026-06-02
+    modified: 2026-07-05
 
 resolvers:
   - provider: Perseus Digital Library
