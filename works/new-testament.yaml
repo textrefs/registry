@@ -38,10 +38,10 @@ resolvers:
     language: en
     access: open
     license: CC-BY-SA-4.0
-    # Per-chapter pages with per-verse anchors `#{verse}`. Single-word OSIS
-    # book names (e.g. John, Matthew, Romans) match KJV page slugs on
-    # en.wikisource directly; multi-token books (1Corinthians etc.) will need
-    # a name-mapping layer when added to `references_range`.
+    # Per-chapter pages with per-verse anchors `#{verse}`. Works only for
+    # books whose OSIS code equals the KJV page slug (e.g. John, Acts);
+    # abbreviated codes (Matt, Rom, 1Cor) will need a provider-side
+    # book-name mapping layer when added to `references_range`.
     url: 'https://en.wikisource.org/wiki/Bible_(King_James)/{book}/Chapter_{chapter}#{verse}'
     last_checked: '2026-06-03'
 

@@ -33,22 +33,16 @@ resolvers:
     url: 'https://www.sefaria.org/{book}.{chapter}.{verse}'
     last_checked: '2026-06-03'
 
-  - provider: Wikisource
-    edition: 'King James Version (1769 Blayney)'
-    language: en
-    access: open
-    license: CC-BY-SA-4.0
-    # Per-chapter pages with per-verse anchors `#{verse}`. The `{book}` capture
-    # uses OSIS-style book names (e.g. Genesis), which match KJV page slugs on
-    # en.wikisource for the Old Testament.
-    url: 'https://en.wikisource.org/wiki/Bible_(King_James)/{book}/Chapter_{chapter}#{verse}'
-    last_checked: '2026-06-03'
+# Wikisource KJV resolver removed with the switch to OSIS book codes: its
+# page slugs need full English names ({book}=Gen no longer matches
+# .../Bible_(King_James)/Genesis/...). Restore once a provider-side
+# book-name mapping layer exists (see textrefs/registry#3).
 
 # Genesis verse counts per chapter (Masoretic). Other Tanakh books to be added
 # incrementally; full enumeration requires per-book authoritative counts.
 references_range:
   - kind: book_chapter_verse
-    book: Genesis
+    book: Gen
     counts:
       [
         31,
