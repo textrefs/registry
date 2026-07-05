@@ -2,8 +2,10 @@ key: stephanus
 preferred_label: Stephanus pagination (Platonic corpus)
 description: >-
   Stephanus pagination: page, section (a–e), and optional sub-line, after
-  Henri Estienne's 1578 edition of Plato's works.
-locator_regex: '^(?<page>[0-9]{1,4})(?<section>[a-e])(?<sub>[0-9]{1,2})?$'
+  Henri Estienne's 1578 edition of Plato's works. Canonical form: page and
+  sub-line are positive integers without leading zeros; the section letter
+  is lowercase.
+locator_regex: '^(?<page>[1-9][0-9]{0,3})(?<section>[a-e])(?<sub>[1-9][0-9]?)?$'
 status: draft
 created: 2026-05-31
 modified: 2026-07-05
