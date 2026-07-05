@@ -12,7 +12,7 @@ Registry data for TextRefs. This directory is the [`textrefs/registry`](https://
 
 - Verify a Wikidata QID before mapping: fetch `https://www.wikidata.org/wiki/Special:EntityData/Q{n}.json` and confirm `labels.en.value` is the work — not an edition, translation, place, animal, or disambiguation page.
 - Use `exactMatch` only when the target denotes the same Work. Use `closeMatch` for proxies (Wikipedia article URLs, hub-cluster IDs).
-- Do not casually edit UUIDv5 seed fields: mapping (`subject`, `relation`, `target.identifier`); reference (`work_key`, `citation_system_key`, `locator`, `normalization_version`). Changing any of these mints a new ID.
+- Do not casually edit UUIDv5 seed fields: mapping (`subject`, `relation`, `target.identifier`); reference (`work_key`, `citation_system_key`, `locator`). Changing any of these mints a new ID.
 - `references_range:` when the canonical set is regular and complete; `references:` when it is sparse, hierarchical, or source-defined.
 - Resolver template variables: `{chapter}` etc. come from named capture groups in the system's `locator_regex`; compiler also derives `{var02..04}`, `{varRoman}`, and `{verseGlobal}` (the last requires `chapter_sizes:` on the system). Confirm the variables you use exist.
 - For URLs that don't fit a template, use `url_by.{var}` maps; for one-off URLs, `extra_resolvers` on the reference.

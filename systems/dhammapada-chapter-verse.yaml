@@ -1,6 +1,9 @@
 key: dhammapada-chapter-verse
 preferred_label: Dhammapada chapter-and-verse
-normalization_version: 1.0.0
+description: >-
+  Dhammapada cited by chapter and verse (`chapter.verse`), e.g. 1.1 through
+  26.41, following the standard Pali Text Society numbering of 423 verses
+  in 26 chapters.
 # Named capture groups expose `{chapter}` and `{verse}` to URL templates.
 # Compiler also exposes zero-padded variants (`{chapter02}`, `{chapter03}`,
 # `{chapter04}`, `{verse02}`, `{verse03}`) and Roman-numeral chapters
@@ -38,18 +41,6 @@ chapter_sizes:
     23,
     41,
   ]
-examples:
-  valid:
-    - '1.1'
-    - '1.20'
-    - '8.3'
-    - '24.26'
-    - '26.41'
-  invalid:
-    - '0.1'
-    - '27.1'
-    - '1'
-    - '1.0'
 status: candidate
 created: 2026-05-31
 modified: 2026-06-01
