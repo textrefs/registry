@@ -7,4 +7,4 @@ description: >-
 locator_regex: '^(?<chapter>[1-9]|[1-7][0-9]|8[01])$'
 status: candidate
 created: 2026-05-31
-modified: 2026-05-31
+modified: 2026-07-05

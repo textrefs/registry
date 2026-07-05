@@ -6,4 +6,4 @@ description: >-
 locator_regex: '^(?<page>[0-9]{3,4})(?<column>[ab])(?<line>[0-9]{1,2})$'
 status: candidate
 created: 2026-05-31
-modified: 2026-05-31
+modified: 2026-07-05

@@ -6,4 +6,4 @@ description: >-
 locator_regex: '^(?<proposition>[1-7](?:\.[0-9]{1,5})?)$'
 status: candidate
 created: 2026-06-02
-modified: 2026-06-02
+modified: 2026-07-05
