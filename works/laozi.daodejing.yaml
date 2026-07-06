@@ -1,9 +1,9 @@
 work:
   key: laozi.daodejing
   preferred_label: Daodejing
-  status: candidate
+  status: draft
   created: 2026-05-31
-  modified: 2026-06-03
+  modified: 2026-07-05
   creators:
     - kind: person
       family: Laozi
@@ -15,16 +15,16 @@ mappings:
     conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q134425'
     source: manual-curation
-    status: candidate
+    status: draft
     created: 2026-05-31
-    modified: 2026-06-02
+    modified: 2026-07-05
   - relation: closeMatch
     conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/Tao_Te_Ching'
     source: 'wikidata:Q134425'
-    status: candidate
+    status: draft
     created: 2026-06-02
-    modified: 2026-06-02
+    modified: 2026-07-05
 
 resolvers:
   - provider: Chinese Text Project

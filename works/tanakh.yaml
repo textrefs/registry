@@ -1,9 +1,9 @@
 work:
   key: tanakh
   preferred_label: Tanakh
-  status: candidate
+  status: draft
   created: 2026-05-31
-  modified: 2026-06-03
+  modified: 2026-07-05
 
 citation_system: bible-book-chapter-verse
 
@@ -12,43 +12,38 @@ mappings:
     conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q83367'
     source: manual-curation
-    status: candidate
+    status: draft
     created: 2026-05-31
-    modified: 2026-05-31
+    modified: 2026-07-05
   - relation: closeMatch
     conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/Tanakh'
     source: 'wikidata:Q83367'
-    status: candidate
+    status: draft
     created: 2026-06-02
-    modified: 2026-06-02
+    modified: 2026-07-05
 
 resolvers:
   - provider: Sefaria
     edition: Sefaria base Hebrew/English
     language: en
     access: open
-    license: CC-BY
+    # Sefaria licensing varies per text (CC-BY / CC-BY-SA / PD); `CC-BY`
+    # alone is not an SPDX id, so only license_url is recorded.
     license_url: 'https://www.sefaria.org/terms'
     url: 'https://www.sefaria.org/{book}.{chapter}.{verse}'
     last_checked: '2026-06-03'
 
-  - provider: Wikisource
-    edition: 'King James Version (1769 Blayney)'
-    language: en
-    access: open
-    license: CC-BY-SA-4.0
-    # Per-chapter pages with per-verse anchors `#{verse}`. The `{book}` capture
-    # uses OSIS-style book names (e.g. Genesis), which match KJV page slugs on
-    # en.wikisource for the Old Testament.
-    url: 'https://en.wikisource.org/wiki/Bible_(King_James)/{book}/Chapter_{chapter}#{verse}'
-    last_checked: '2026-06-03'
+# Wikisource KJV resolver removed with the switch to OSIS book codes: its
+# page slugs need full English names ({book}=Gen no longer matches
+# .../Bible_(King_James)/Genesis/...). Restore once a provider-side
+# book-name mapping layer exists (see textrefs/registry#3).
 
 # Genesis verse counts per chapter (Masoretic). Other Tanakh books to be added
 # incrementally; full enumeration requires per-book authoritative counts.
 references_range:
   - kind: book_chapter_verse
-    book: Genesis
+    book: Gen
     counts:
       [
         31,

@@ -1,9 +1,9 @@
 work:
   key: homer.odyssey
   preferred_label: Odyssey
-  status: candidate
+  status: draft
   created: 2026-05-31
-  modified: 2026-06-03
+  modified: 2026-07-05
   creators:
     - kind: person
       family: Homer
@@ -15,16 +15,16 @@ mappings:
     conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q35160'
     source: manual-curation
-    status: candidate
+    status: draft
     created: 2026-05-31
-    modified: 2026-05-31
+    modified: 2026-07-05
   - relation: closeMatch
     conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/Odyssey'
     source: 'wikidata:Q35160'
-    status: candidate
+    status: draft
     created: 2026-06-02
-    modified: 2026-06-02
+    modified: 2026-07-05
 
 resolvers:
   - provider: Scaife Viewer

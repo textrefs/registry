@@ -1,9 +1,9 @@
 work:
   key: aristotle.nicomachean-ethics
   preferred_label: Nicomachean Ethics
-  status: candidate
+  status: draft
   created: 2026-05-31
-  modified: 2026-06-03
+  modified: 2026-07-05
   creators:
     - kind: person
       family: Aristotle
@@ -15,16 +15,16 @@ mappings:
     conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q474537'
     source: manual-curation
-    status: candidate
+    status: draft
     created: 2026-05-31
-    modified: 2026-06-02
+    modified: 2026-07-05
   - relation: closeMatch
     conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/Nicomachean_Ethics'
     source: 'wikidata:Q474537'
-    status: candidate
+    status: draft
     created: 2026-06-02
-    modified: 2026-06-02
+    modified: 2026-07-05
 
 resolvers:
   - provider: Perseus Digital Library
@@ -41,7 +41,9 @@ resolvers:
     edition: 'The Nicomachean Ethics of Aristotle'
     language: en
     access: open
-    license: 'public-domain'
+    # Public domain in the USA per Project Gutenberg; not an SPDX id, so
+    # only license_url is recorded (spec: omit `license` for non-SPDX).
+    license_url: 'https://www.gutenberg.org/policy/license.html'
     # Coarse landing-page fallback: the Ross translation is a single ebook
     # with no Bekker anchor, so the URL has no locator placeholders and
     # resolves to the same page for every reference. The Perseus
