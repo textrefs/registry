@@ -14,6 +14,10 @@ Registry data for TextRefs. This directory is the [`textrefs/registry`](https://
 - Use `exactMatch` only when the target denotes the same Work. Use `closeMatch` for proxies (Wikipedia article URLs, hub-cluster IDs).
 - Do not casually edit UUIDv5 seed fields: mapping (`subject`, `relation`, `target.identifier`); reference (`work_key`, `citation_system_key`, `locator`). Changing any of these mints a new ID.
 - `references_range:` when the canonical set is regular and complete; `references:` when it is sparse, hierarchical, or source-defined.
+- The top-level `citation_system:` is the work's **preferred** system: it is what mints the short `/cite/{work_key}/{locator}` alias and what the compiler publishes as `preferred_citation_system_key`. Changing it retargets that alias to a different reference — aliases are presentational and may be retargeted, but say so in the PR (ADR-0005).
+- A work cited under more than one system lists the others under `additional_systems:`, each with its own `citation_system:`, `resolvers:`, and locators. Their references get only the qualified `/cite/{work_key}/{citation_system_key}/{locator}` alias.
+- `reference_status:` sets the status of one block's references. The top-level block defaults to the work's status; an `additional_systems` block defaults to `draft` and never inherits `active` — promote a fallback system deliberately, not by adding it.
+- Locators MUST NOT contain `/`: the alias grammar tells `{work}/{locator}` from `{work}/{system}/{locator}` by segment count alone, and the compiler rejects the file otherwise.
 - Resolver template variables: `{chapter}` etc. come from named capture groups in the system's `locator_regex`; compiler also derives `{var02..04}`, `{varRoman}`, and `{verseGlobal}` (the last requires `chapter_sizes:` on the system). Confirm the variables you use exist.
 - For URLs that don't fit a template, use `url_by.{var}` maps; for one-off URLs, `extra_resolvers` on the reference.
 - Record `last_checked` on resolver URLs when adding or updating source-derived resolvers, and note licence/access where known.
