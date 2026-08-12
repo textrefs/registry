@@ -87,8 +87,8 @@ resolvers:
 # (morphgnt/sblgnt) — the edition the STEP Bible resolver serves. Each entry is
 # the HIGHEST verse number in that chapter, not the number of verses printed:
 # SBLGNT omits verses traditional numbering reserves (Matt 17:21, John 5:4, the
-# bracketed pericope adulterae), and those numbers are still cited. 7,953
-# references in total.
+# bracketed pericope adulterae, whose first verse is John 7:53), and those
+# numbers are still cited. 7,954 references in total.
 references_range:
   - kind: book_chapter_verse
     book: Matt
@@ -165,7 +165,7 @@ references_range:
         54,
         47,
         71,
-        52,
+        53,
         59,
         41,
         42,
