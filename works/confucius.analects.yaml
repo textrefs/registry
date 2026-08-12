@@ -3,7 +3,7 @@ work:
   preferred_label: Analects
   status: draft
   created: 2026-05-31
-  modified: 2026-07-05
+  modified: 2026-08-11
   creators:
     - kind: person
       family: Confucius
@@ -11,20 +11,20 @@ work:
 citation_system: analects-book-chapter
 
 mappings:
-  - relation: exactMatch
+  - relation: alternateOf
     conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q276015'
     source: manual-curation
     status: draft
     created: 2026-05-31
-    modified: 2026-07-05
-  - relation: closeMatch
+    modified: 2026-08-11
+  - relation: isReferencedBy
     conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/Analects'
     source: 'wikidata:Q276015'
     status: draft
     created: 2026-06-02
-    modified: 2026-07-05
+    modified: 2026-08-11
 
 resolvers:
   - provider: Chinese Text Project

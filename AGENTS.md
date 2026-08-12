@@ -11,7 +11,7 @@ Registry data for TextRefs. This directory is the [`textrefs/registry`](https://
 ## Authoring rules
 
 - Verify a Wikidata QID before mapping: fetch `https://www.wikidata.org/wiki/Special:EntityData/Q{n}.json` and confirm `labels.en.value` is the work — not an edition, translation, place, animal, or disambiguation page.
-- Use `exactMatch` only when the target denotes the same Work. Use `closeMatch` for proxies (Wikipedia article URLs, hub-cluster IDs).
+- Choose the mapping relation by what the target is, not by confidence: `alternateOf` when the target is another entity denoting the same Work (e.g. a Wikidata item); `isReferencedBy` when the target is a document or page about the Work (e.g. a Wikipedia article).
 - Do not casually edit UUIDv5 seed fields: mapping (`subject`, `relation`, `target.identifier`); reference (`work_key`, `citation_system_key`, `locator`). Changing any of these mints a new ID.
 - `references_range:` when the canonical set is regular and complete; `references:` when it is sparse, hierarchical, or source-defined.
 - The top-level `citation_system:` is the work's **preferred** system: it is what mints the short `/cite/{work_key}/{locator}` alias and what the compiler publishes as `preferred_citation_system_key`. Changing it retargets that alias to a different reference — aliases are presentational and may be retargeted, but say so in the PR (ADR-0005).
@@ -42,7 +42,7 @@ Get `work.key`, `work.preferred_label`, and `work.creators` right on the first a
   - Mononyms (Homer, Plato, Confucius, Laozi, Murasaki Shikibu, …): `kind: person` with `family` only and no `given`. This is the CSL convention for single-name authors and matches Chicago's "Homer, _Iliad_ 1.1." output.
   - Anonymous / collective: **omit `creators` entirely**. Do not write a literal "Anonymous"; absence is the correct CSL signal and the Chicago formatter already handles missing authors.
   - Reserve `kind: literal` for names that genuinely should not decompose: corporate/institutional authors ("World Health Organization"), or pseudonymous attribution strings ("[Pseudo-]Aristotle").
-  - Attributed-but-disputed (e.g. Laozi for _Daodejing_): record the traditional attribution as `kind: person, family: Laozi`; encode uncertainty via a `closeMatch` mapping, not in the name string.
+  - Attributed-but-disputed (e.g. Laozi for _Daodejing_): record the traditional attribution as `kind: person, family: Laozi`; do not encode the dispute in the name string. TextRefs has no relation for attribution uncertainty in this version.
 
 ## Pointers
 

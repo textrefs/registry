@@ -3,7 +3,7 @@ work:
   preferred_label: The Tale of Genji
   status: draft
   created: 2026-05-31
-  modified: 2026-07-05
+  modified: 2026-08-11
   creators:
     - kind: person
       family: Murasaki Shikibu
@@ -11,20 +11,20 @@ work:
 citation_system: genji-chapter
 
 mappings:
-  - relation: exactMatch
+  - relation: alternateOf
     conforms_to: 'https://www.wikidata.org/'
     identifier: 'https://www.wikidata.org/entity/Q8269'
     source: manual-curation
     status: draft
     created: 2026-05-31
-    modified: 2026-07-05
-  - relation: closeMatch
+    modified: 2026-08-11
+  - relation: isReferencedBy
     conforms_to: 'https://en.wikipedia.org/'
     identifier: 'https://en.wikipedia.org/wiki/The_Tale_of_Genji'
     source: 'wikidata:Q8269'
     status: draft
     created: 2026-06-02
-    modified: 2026-07-05
+    modified: 2026-08-11
 
 # The NINJAL transcription site exposes per-chapter pages but with
 # non-templatable URL slugs; resolvers can be added later via url_by.
