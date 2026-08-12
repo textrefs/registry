@@ -3,7 +3,7 @@ work:
   preferred_label: Nicomachean Ethics
   status: draft
   created: 2026-05-31
-  modified: 2026-08-11
+  modified: 2026-08-12
   creators:
     - kind: person
       family: Aristotle
@@ -37,21 +37,12 @@ resolvers:
     # in the `doc` query; lands on the Bekker column. Line is not addressable.
     url: 'https://www.perseus.tufts.edu/hopper/text?doc=Aristot.+Nic.+Eth.+{page}{column}'
     last_checked: '2026-06-03'
-  - provider: Project Gutenberg
-    edition: 'The Nicomachean Ethics of Aristotle'
-    language: en
-    access: open
-    # Public domain in the USA per Project Gutenberg; not an SPDX id, so
-    # only license_url is recorded (spec: omit `license` for non-SPDX).
-    license_url: 'https://www.gutenberg.org/policy/license.html'
-    # Coarse landing-page fallback: the Ross translation is a single ebook
-    # with no Bekker anchor, so the URL has no locator placeholders and
-    # resolves to the same page for every reference. The Perseus
-    # canonical-greekLit edition is indexed by Bywater book.section, not
-    # Bekker page+column, so a Scaife CTS URN cannot be derived from a
-    # Bekker locator alone.
-    url: 'https://www.gutenberg.org/ebooks/8438'
-    last_checked: '2026-06-09'
+
+# No second resolver. The Perseus canonical-greekLit edition is indexed by
+# Bywater book.section, not Bekker page+column, so a Scaife CTS URN cannot be
+# derived from a Bekker locator alone; and a translation with no Bekker anchor
+# would resolve every one of the ~5,220 references to the same landing page,
+# which tells a reader less than no link at all.
 
 # Page ranges by book: I 1094a–1103a, II 1103a–1109b, III 1109b–1119b,
 # IV 1119b–1128b, V 1129a–1138b, VI 1138b–1145a, VII 1145a–1154b,
