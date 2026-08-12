@@ -3,7 +3,7 @@ work:
   preferred_label: The Tale of Genji
   status: draft
   created: 2026-05-31
-  modified: 2026-08-11
+  modified: 2026-08-12
   creators:
     - kind: person
       family: Murasaki Shikibu
@@ -26,8 +26,6 @@ mappings:
     created: 2026-06-02
     modified: 2026-08-11
 
-# The NINJAL transcription site exposes per-chapter pages but with
-# non-templatable URL slugs; resolvers can be added later via url_by.
 resolvers:
   - provider: Wikisource
     edition: 'Genji monogatari, Shibuya Eiichi edition (源氏物語 渋谷栄一校訂)'
@@ -94,19 +92,72 @@ resolvers:
         52: 'https://ja.wikisource.org/wiki/源氏物語/蜻蛉'
         53: 'https://ja.wikisource.org/wiki/源氏物語/手習'
         54: 'https://ja.wikisource.org/wiki/源氏物語/夢浮橋'
-  - provider: Project Gutenberg
-    edition: 'Japanese Literature (anthology incl. Genji Monogatari selections, transl. Suematsu Kenchō)'
-    language: en
+  - provider: National Institute for Japanese Language and Linguistics (NINJAL)
+    edition: 'Genji monogatari, Library of Congress manuscript transcription (国立国語研究所 翻字本文)'
+    language: ja
     access: open
-    # Public domain in the USA per Project Gutenberg; not an SPDX id, so
-    # only license_url is recorded (spec: omit `license` for non-SPDX).
-    license_url: 'https://www.gutenberg.org/policy/license.html'
-    # Coarse landing-page fallback: the Suematsu translation appears as a
-    # section of PG 19264 (Wilson, ed., *Japanese Literature*) with no
-    # per-chapter anchor, so the URL has no locator placeholders and
-    # resolves to the same page for every reference.
-    url: 'https://www.gutenberg.org/ebooks/19264'
-    last_checked: '2026-06-09'
+    license: CC-BY-4.0
+    license_url: 'https://creativecommons.org/licenses/by/4.0/'
+    # Per-chapter pages `pages/{NN}LC_{Romaji}/index.html`. The number is
+    # zero-padded and derivable, but the romanized chapter name is not, so
+    # each of the 54 is listed explicitly.
+    last_checked: '2026-08-12'
+    url_by:
+      chapter:
+        1: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/01LC_Kiritsubo/index.html'
+        2: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/02LC_Hahakigi/index.html'
+        3: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/03LC_Utsusemi/index.html'
+        4: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/04LC_Yuugao/index.html'
+        5: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/05LC_Wakamurasaki/index.html'
+        6: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/06LC_Suetsumuhana/index.html'
+        7: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/07LC_Momijinoga/index.html'
+        8: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/08LC_Hananoen/index.html'
+        9: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/09LC_Aoi/index.html'
+        10: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/10LC_Sakaki/index.html'
+        11: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/11LC_Hanachirusato/index.html'
+        12: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/12LC_Suma/index.html'
+        13: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/13LC_Akashi/index.html'
+        14: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/14LC_Miotsukushi/index.html'
+        15: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/15LC_Yomogiu/index.html'
+        16: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/16LC_Sekiya/index.html'
+        17: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/17LC_Eawase/index.html'
+        18: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/18LC_Matsukaze/index.html'
+        19: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/19LC_Usugumo/index.html'
+        20: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/20LC_Asagao/index.html'
+        21: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/21LC_Otome/index.html'
+        22: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/22LC_Tamakazura/index.html'
+        23: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/23LC_Hatsune/index.html'
+        24: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/24LC_Kochou/index.html'
+        25: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/25LC_Hotaru/index.html'
+        26: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/26LC_Tokonatsu/index.html'
+        27: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/27LC_Kagaribi/index.html'
+        28: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/28LC_Nowaki/index.html'
+        29: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/29LC_Miyuki/index.html'
+        30: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/30LC_Fujibakama/index.html'
+        31: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/31LC_Makibashira/index.html'
+        32: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/32LC_Umegae/index.html'
+        33: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/33LC_Fujinouraba/index.html'
+        34: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/34LC_Wakana_jou/index.html'
+        35: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/35LC_Wakana_ge/index.html'
+        36: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/36LC_Kashiwagi/index.html'
+        37: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/37LC_Yokobue/index.html'
+        38: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/38LC_Suzumushi/index.html'
+        39: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/39LC_Yuugiri/index.html'
+        40: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/40LC_Minori/index.html'
+        41: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/41LC_Maboroshi/index.html'
+        42: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/42LC_Nioumiya/index.html'
+        43: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/43LC_Koubai/index.html'
+        44: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/44LC_Takekawa/index.html'
+        45: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/45LC_Hashihime/index.html'
+        46: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/46LC_Shiigamoto/index.html'
+        47: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/47LC_Agemaki/index.html'
+        48: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/48LC_Sawarabi/index.html'
+        49: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/49LC_Yadorigi/index.html'
+        50: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/50LC_Azumaya/index.html'
+        51: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/51LC_Ukifune/index.html'
+        52: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/52LC_Kagerou/index.html'
+        53: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/53LC_Tenarai/index.html'
+        54: 'https://mmsrv.ninjal.ac.jp/LCgenji/pages/54LC_Yumenoukihashi/index.html'
 
 references_range:
   - kind: integer

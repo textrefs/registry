@@ -3,7 +3,7 @@ work:
   preferred_label: Dhammapada
   status: draft
   created: 2026-05-31
-  modified: 2026-08-11
+  modified: 2026-08-12
 
 citation_system: dhammapada-chapter-verse
 
@@ -28,18 +28,30 @@ mappings:
 # compiler-derived variants:
 #   - zero-padded: `chapter02`, `chapter03`, `chapter04`
 #   - Roman:       `chapterRoman` (e.g. `I`, `VIII`, `XXVI`)
-#   - cumulative:  `verseGlobal` (1..423, derived from system `chapter_sizes`)
+#   - cumulative:  `verseGlobal` (1..423, derived from system `chapter_sizes`),
+#                 which SuttaCentral's per-verse URLs consume directly
 # Providers whose URLs don't fit a template use a per-chapter URL map (`url_by.chapter`).
 resolvers:
-  - provider: Project Gutenberg
-    edition: 'Müller (1881), Gutenberg ebook #2017'
+  - provider: SuttaCentral
+    edition: 'Mahāsaṅgīti Tipiṭaka (Pali root text)'
+    language: pli
+    access: open
+    license: CC0-1.0
+    license_url: 'https://creativecommons.org/publicdomain/zero/1.0/'
+    # SuttaCentral stores the Dhammapada in 26 range units (`dhp1-20` …
+    # `dhp383-423`), but supports per-verse links into them: `/dhp{N}` for the
+    # global 1..423 counter, which `verseGlobal` supplies.
+    url: 'https://suttacentral.net/dhp{verseGlobal}/pli/ms'
+    last_checked: '2026-08-12'
+
+  - provider: SuttaCentral
+    edition: 'Bhikkhu Sujato translation'
     language: en
     access: open
-    license_url: 'https://www.gutenberg.org/policy/license.html'
-    # Single-page text; per-chapter anchors `#link2HCH0001` … `#link2HCH0026`.
-    # No verse anchors available — resolves to chapter level only.
-    url: 'https://www.gutenberg.org/files/2017/2017-h/2017-h.htm#link2HCH{chapter04}'
-    last_checked: '2026-06-03'
+    license: CC0-1.0
+    license_url: 'https://creativecommons.org/publicdomain/zero/1.0/'
+    url: 'https://suttacentral.net/dhp{verseGlobal}/en/sujato'
+    last_checked: '2026-08-12'
 
   # Wikisource hosts the Müller (1881) translation but with a 25-chapter division
   # (canonical chapters XXV+XXVI merged into XXV); verse-level anchors use a global
@@ -82,15 +94,6 @@ resolvers:
         24: 'https://ancient-buddhist-texts.net/Texts-and-Translations/Dhammapada/24-Craving.htm'
         25: 'https://ancient-buddhist-texts.net/Texts-and-Translations/Dhammapada/25-Monastics.htm'
         26: 'https://ancient-buddhist-texts.net/Texts-and-Translations/Dhammapada/26-Brahmins.htm'
-
-  - provider: palikanon.com
-    edition: 'Nyanatiloka (Hg.) Übersetzung'
-    language: de
-    access: open
-    # Single page; only a sparse handful of `#dhp_{N}` anchors exist (not one
-    # per verse), so resolves to page level only.
-    url: 'https://palikanon.com/khuddaka/dhp/dhp.html'
-    last_checked: '2026-06-03'
 
 # All 423 references across 26 chapters, expanded from per-chapter verse counts.
 references_range:

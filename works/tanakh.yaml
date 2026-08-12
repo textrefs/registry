@@ -3,7 +3,7 @@ work:
   preferred_label: Tanakh
   status: draft
   created: 2026-05-31
-  modified: 2026-08-11
+  modified: 2026-08-12
 
 citation_system: bible-book-chapter-verse
 
@@ -34,13 +34,66 @@ resolvers:
     url: 'https://www.sefaria.org/{book}.{chapter}.{verse}'
     last_checked: '2026-06-03'
 
-# Wikisource KJV resolver removed with the switch to OSIS book codes: its
-# page slugs need full English names ({book}=Gen no longer matches
-# .../Bible_(King_James)/Genesis/...). Restore once a provider-side
-# book-name mapping layer exists (see textrefs/registry#3).
+  - provider: Deutsche Bibelgesellschaft
+    edition: 'Biblia Hebraica Stuttgartensia (BHS)'
+    language: hbo
+    access: open
+    # Free to read, no registration. Not an open licence, so no `license`.
+    license_url: 'https://www.die-bibel.de/impressum'
+    # die-bibel.de addresses books by USFM code (`PSA`), not by the OSIS code
+    # the locator carries (`Ps`), so the spelling is mapped per resolver. An
+    # unknown code silently renders Genesis 1 rather than erroring, so every
+    # entry below was checked against the rendered chapter title.
+    vars:
+      bookUsfm:
+        from: book
+        map:
+          Gen: GEN
+          Exod: EXO
+          Lev: LEV
+          Num: NUM
+          Deut: DEU
+          Josh: JOS
+          Judg: JDG
+          1Sam: 1SA
+          2Sam: 2SA
+          1Kgs: 1KI
+          2Kgs: 2KI
+          Isa: ISA
+          Jer: JER
+          Ezek: EZK
+          Hos: HOS
+          Joel: JOL
+          Amos: AMO
+          Obad: OBA
+          Jonah: JON
+          Mic: MIC
+          Nah: NAM
+          Hab: HAB
+          Zeph: ZEP
+          Hag: HAG
+          Zech: ZEC
+          Mal: MAL
+          Ps: PSA
+          Prov: PRO
+          Job: JOB
+          Song: SNG
+          Ruth: RUT
+          Lam: LAM
+          Eccl: ECC
+          Esth: EST
+          Dan: DAN
+          Ezra: EZR
+          Neh: NEH
+          1Chr: 1CH
+          2Chr: 2CH
+    url: 'https://www.die-bibel.de/bibel/BHS/{bookUsfm}.{chapter}/#{bookUsfm}.{chapter}.{verse}'
+    last_checked: '2026-08-12'
 
-# Genesis verse counts per chapter (Masoretic). Other Tanakh books to be added
-# incrementally; full enumeration requires per-book authoritative counts.
+# Verse counts per chapter for all 39 books, derived from the Westminster
+# Leningrad Codex (openscriptures/morphhb) — the Masoretic text BHS presents.
+# Books are in Tanakh order: Torah, Nevi'im, Ketuvim. 23,213 references in
+# total.
 references_range:
   - kind: book_chapter_verse
     book: Gen
@@ -76,8 +129,8 @@ references_range:
         22,
         35,
         43,
-        55,
-        32,
+        54,
+        33,
         20,
         31,
         29,
@@ -96,4 +149,892 @@ references_range:
         22,
         33,
         26,
+      ]
+  - kind: book_chapter_verse
+    book: Exod
+    counts:
+      [
+        22,
+        25,
+        22,
+        31,
+        23,
+        30,
+        29,
+        28,
+        35,
+        29,
+        10,
+        51,
+        22,
+        31,
+        27,
+        36,
+        16,
+        27,
+        25,
+        26,
+        37,
+        30,
+        33,
+        18,
+        40,
+        37,
+        21,
+        43,
+        46,
+        38,
+        18,
+        35,
+        23,
+        35,
+        35,
+        38,
+        29,
+        31,
+        43,
+        38,
+      ]
+  - kind: book_chapter_verse
+    book: Lev
+    counts:
+      [
+        17,
+        16,
+        17,
+        35,
+        26,
+        23,
+        38,
+        36,
+        24,
+        20,
+        47,
+        8,
+        59,
+        57,
+        33,
+        34,
+        16,
+        30,
+        37,
+        27,
+        24,
+        33,
+        44,
+        23,
+        55,
+        46,
+        34,
+      ]
+  - kind: book_chapter_verse
+    book: Num
+    counts:
+      [
+        54,
+        34,
+        51,
+        49,
+        31,
+        27,
+        89,
+        26,
+        23,
+        36,
+        35,
+        16,
+        33,
+        45,
+        41,
+        35,
+        28,
+        32,
+        22,
+        29,
+        35,
+        41,
+        30,
+        25,
+        19,
+        65,
+        23,
+        31,
+        39,
+        17,
+        54,
+        42,
+        56,
+        29,
+        34,
+        13,
+      ]
+  - kind: book_chapter_verse
+    book: Deut
+    counts:
+      [
+        46,
+        37,
+        29,
+        49,
+        33,
+        25,
+        26,
+        20,
+        29,
+        22,
+        32,
+        31,
+        19,
+        29,
+        23,
+        22,
+        20,
+        22,
+        21,
+        20,
+        23,
+        29,
+        26,
+        22,
+        19,
+        19,
+        26,
+        69,
+        28,
+        20,
+        30,
+        52,
+        29,
+        12,
+      ]
+  - kind: book_chapter_verse
+    book: Josh
+    counts:
+      [
+        18,
+        24,
+        17,
+        24,
+        15,
+        27,
+        26,
+        35,
+        27,
+        43,
+        23,
+        24,
+        33,
+        15,
+        63,
+        10,
+        18,
+        28,
+        51,
+        9,
+        45,
+        34,
+        16,
+        33,
+      ]
+  - kind: book_chapter_verse
+    book: Judg
+    counts:
+      [
+        36,
+        23,
+        31,
+        24,
+        31,
+        40,
+        25,
+        35,
+        57,
+        18,
+        40,
+        15,
+        25,
+        20,
+        20,
+        31,
+        13,
+        31,
+        30,
+        48,
+        25,
+      ]
+  - kind: book_chapter_verse
+    book: 1Sam
+    counts:
+      [
+        28,
+        36,
+        21,
+        22,
+        12,
+        21,
+        17,
+        22,
+        27,
+        27,
+        15,
+        25,
+        23,
+        52,
+        35,
+        23,
+        58,
+        30,
+        24,
+        42,
+        16,
+        23,
+        28,
+        23,
+        44,
+        25,
+        12,
+        25,
+        11,
+        31,
+        13,
+      ]
+  - kind: book_chapter_verse
+    book: 2Sam
+    counts:
+      [
+        27,
+        32,
+        39,
+        12,
+        25,
+        23,
+        29,
+        18,
+        13,
+        19,
+        27,
+        31,
+        39,
+        33,
+        37,
+        23,
+        29,
+        32,
+        44,
+        26,
+        22,
+        51,
+        39,
+        25,
+      ]
+  - kind: book_chapter_verse
+    book: 1Kgs
+    counts:
+      [
+        53,
+        46,
+        28,
+        20,
+        32,
+        38,
+        51,
+        66,
+        28,
+        29,
+        43,
+        33,
+        34,
+        31,
+        34,
+        34,
+        24,
+        46,
+        21,
+        43,
+        29,
+        54,
+      ]
+  - kind: book_chapter_verse
+    book: 2Kgs
+    counts:
+      [
+        18,
+        25,
+        27,
+        44,
+        27,
+        33,
+        20,
+        29,
+        37,
+        36,
+        20,
+        22,
+        25,
+        29,
+        38,
+        20,
+        41,
+        37,
+        37,
+        21,
+        26,
+        20,
+        37,
+        20,
+        30,
+      ]
+  - kind: book_chapter_verse
+    book: Isa
+    counts:
+      [
+        31,
+        22,
+        26,
+        6,
+        30,
+        13,
+        25,
+        23,
+        20,
+        34,
+        16,
+        6,
+        22,
+        32,
+        9,
+        14,
+        14,
+        7,
+        25,
+        6,
+        17,
+        25,
+        18,
+        23,
+        12,
+        21,
+        13,
+        29,
+        24,
+        33,
+        9,
+        20,
+        24,
+        17,
+        10,
+        22,
+        38,
+        22,
+        8,
+        31,
+        29,
+        25,
+        28,
+        28,
+        25,
+        13,
+        15,
+        22,
+        26,
+        11,
+        23,
+        15,
+        12,
+        17,
+        13,
+        12,
+        21,
+        14,
+        21,
+        22,
+        11,
+        12,
+        19,
+        11,
+        25,
+        24,
+      ]
+  - kind: book_chapter_verse
+    book: Jer
+    counts:
+      [
+        19,
+        37,
+        25,
+        31,
+        31,
+        30,
+        34,
+        23,
+        25,
+        25,
+        23,
+        17,
+        27,
+        22,
+        21,
+        21,
+        27,
+        23,
+        15,
+        18,
+        14,
+        30,
+        40,
+        10,
+        38,
+        24,
+        22,
+        17,
+        32,
+        24,
+        40,
+        44,
+        26,
+        22,
+        19,
+        32,
+        21,
+        28,
+        18,
+        16,
+        18,
+        22,
+        13,
+        30,
+        5,
+        28,
+        7,
+        47,
+        39,
+        46,
+        64,
+        34,
+      ]
+  - kind: book_chapter_verse
+    book: Ezek
+    counts:
+      [
+        28,
+        10,
+        27,
+        17,
+        17,
+        14,
+        27,
+        18,
+        11,
+        22,
+        25,
+        28,
+        23,
+        23,
+        8,
+        63,
+        24,
+        32,
+        14,
+        44,
+        37,
+        31,
+        49,
+        27,
+        17,
+        21,
+        36,
+        26,
+        21,
+        26,
+        18,
+        32,
+        33,
+        31,
+        15,
+        38,
+        28,
+        23,
+        29,
+        49,
+        26,
+        20,
+        27,
+        31,
+        25,
+        24,
+        23,
+        35,
+      ]
+  - kind: book_chapter_verse
+    book: Hos
+    counts: [9, 25, 5, 19, 15, 11, 16, 14, 17, 15, 11, 15, 15, 10]
+  - kind: book_chapter_verse
+    book: Joel
+    counts: [20, 27, 5, 21]
+  - kind: book_chapter_verse
+    book: Amos
+    counts: [15, 16, 15, 13, 27, 14, 17, 14, 15]
+  - kind: book_chapter_verse
+    book: Obad
+    counts: [21]
+  - kind: book_chapter_verse
+    book: Jonah
+    counts: [16, 11, 10, 11]
+  - kind: book_chapter_verse
+    book: Mic
+    counts: [16, 13, 12, 14, 14, 16, 20]
+  - kind: book_chapter_verse
+    book: Nah
+    counts: [14, 14, 19]
+  - kind: book_chapter_verse
+    book: Hab
+    counts: [17, 20, 19]
+  - kind: book_chapter_verse
+    book: Zeph
+    counts: [18, 15, 20]
+  - kind: book_chapter_verse
+    book: Hag
+    counts: [15, 23]
+  - kind: book_chapter_verse
+    book: Zech
+    counts: [17, 17, 10, 14, 11, 15, 14, 23, 17, 12, 17, 14, 9, 21]
+  - kind: book_chapter_verse
+    book: Mal
+    counts: [14, 17, 24]
+  - kind: book_chapter_verse
+    book: Ps
+    counts:
+      [
+        6,
+        12,
+        9,
+        9,
+        13,
+        11,
+        18,
+        10,
+        21,
+        18,
+        7,
+        9,
+        6,
+        7,
+        5,
+        11,
+        15,
+        51,
+        15,
+        10,
+        14,
+        32,
+        6,
+        10,
+        22,
+        12,
+        14,
+        9,
+        11,
+        13,
+        25,
+        11,
+        22,
+        23,
+        28,
+        13,
+        40,
+        23,
+        14,
+        18,
+        14,
+        12,
+        5,
+        27,
+        18,
+        12,
+        10,
+        15,
+        21,
+        23,
+        21,
+        11,
+        7,
+        9,
+        24,
+        14,
+        12,
+        12,
+        18,
+        14,
+        9,
+        13,
+        12,
+        11,
+        14,
+        20,
+        8,
+        36,
+        37,
+        6,
+        24,
+        20,
+        28,
+        23,
+        11,
+        13,
+        21,
+        72,
+        13,
+        20,
+        17,
+        8,
+        19,
+        13,
+        14,
+        17,
+        7,
+        19,
+        53,
+        17,
+        16,
+        16,
+        5,
+        23,
+        11,
+        13,
+        12,
+        9,
+        9,
+        5,
+        8,
+        29,
+        22,
+        35,
+        45,
+        48,
+        43,
+        14,
+        31,
+        7,
+        10,
+        10,
+        9,
+        8,
+        18,
+        19,
+        2,
+        29,
+        176,
+        7,
+        8,
+        9,
+        4,
+        8,
+        5,
+        6,
+        5,
+        6,
+        8,
+        8,
+        3,
+        18,
+        3,
+        3,
+        21,
+        26,
+        9,
+        8,
+        24,
+        14,
+        10,
+        8,
+        12,
+        15,
+        21,
+        10,
+        20,
+        14,
+        9,
+        6,
+      ]
+  - kind: book_chapter_verse
+    book: Prov
+    counts:
+      [
+        33,
+        22,
+        35,
+        27,
+        23,
+        35,
+        27,
+        36,
+        18,
+        32,
+        31,
+        28,
+        25,
+        35,
+        33,
+        33,
+        28,
+        24,
+        29,
+        30,
+        31,
+        29,
+        35,
+        34,
+        28,
+        28,
+        27,
+        28,
+        27,
+        33,
+        31,
+      ]
+  - kind: book_chapter_verse
+    book: Job
+    counts:
+      [
+        22,
+        13,
+        26,
+        21,
+        27,
+        30,
+        21,
+        22,
+        35,
+        22,
+        20,
+        25,
+        28,
+        22,
+        35,
+        22,
+        16,
+        21,
+        29,
+        29,
+        34,
+        30,
+        17,
+        25,
+        6,
+        14,
+        23,
+        28,
+        25,
+        31,
+        40,
+        22,
+        33,
+        37,
+        16,
+        33,
+        24,
+        41,
+        30,
+        32,
+        26,
+        17,
+      ]
+  - kind: book_chapter_verse
+    book: Song
+    counts: [17, 17, 11, 16, 16, 12, 14, 14]
+  - kind: book_chapter_verse
+    book: Ruth
+    counts: [22, 23, 18, 22]
+  - kind: book_chapter_verse
+    book: Lam
+    counts: [22, 22, 66, 22, 22]
+  - kind: book_chapter_verse
+    book: Eccl
+    counts: [18, 26, 22, 17, 19, 12, 29, 17, 18, 20, 10, 14]
+  - kind: book_chapter_verse
+    book: Esth
+    counts: [22, 23, 15, 17, 14, 14, 10, 17, 32, 3]
+  - kind: book_chapter_verse
+    book: Dan
+    counts: [21, 49, 33, 34, 30, 29, 28, 27, 27, 21, 45, 13]
+  - kind: book_chapter_verse
+    book: Ezra
+    counts: [11, 70, 13, 24, 17, 22, 28, 36, 15, 44]
+  - kind: book_chapter_verse
+    book: Neh
+    counts: [11, 20, 38, 17, 19, 19, 72, 18, 37, 40, 36, 47, 31]
+  - kind: book_chapter_verse
+    book: 1Chr
+    counts:
+      [
+        54,
+        55,
+        24,
+        43,
+        41,
+        66,
+        40,
+        40,
+        44,
+        14,
+        47,
+        41,
+        14,
+        17,
+        29,
+        43,
+        27,
+        17,
+        19,
+        8,
+        30,
+        19,
+        32,
+        31,
+        31,
+        32,
+        34,
+        21,
+        30,
+      ]
+  - kind: book_chapter_verse
+    book: 2Chr
+    counts:
+      [
+        18,
+        17,
+        17,
+        22,
+        14,
+        42,
+        22,
+        18,
+        31,
+        19,
+        23,
+        16,
+        23,
+        14,
+        19,
+        14,
+        19,
+        34,
+        11,
+        37,
+        20,
+        12,
+        21,
+        27,
+        28,
+        23,
+        9,
+        27,
+        36,
+        27,
+        21,
+        33,
+        25,
+        33,
+        27,
+        23,
       ]

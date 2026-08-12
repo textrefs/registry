@@ -3,7 +3,7 @@ work:
   preferred_label: New Testament
   status: draft
   created: 2026-05-31
-  modified: 2026-08-11
+  modified: 2026-08-12
 
 citation_system: bible-book-chapter-verse
 
@@ -33,21 +33,128 @@ resolvers:
     url: 'https://www.stepbible.org/?q=version=SBLG%7Creference={book}.{chapter}.{verse}'
     last_checked: '2026-06-03'
 
-  - provider: Wikisource
-    edition: 'King James Version (1769 Blayney)'
-    language: en
+  - provider: Deutsche Bibelgesellschaft
+    edition: 'Nestle-Aland, Novum Testamentum Graece, 28th edn (NA28)'
+    language: grc
     access: open
-    license: CC-BY-SA-4.0
-    # Per-chapter pages with per-verse anchors `#{verse}`. Works only for
-    # books whose OSIS code equals the KJV page slug (e.g. John, Acts);
-    # abbreviated codes (Matt, Rom, 1Cor) will need a provider-side
-    # book-name mapping layer when added to `references_range`.
-    url: 'https://en.wikisource.org/wiki/Bible_(King_James)/{book}/Chapter_{chapter}#{verse}'
-    last_checked: '2026-06-03'
+    # Free to read, no registration; the Greek text is served in full. Not an
+    # open licence, so no `license` is recorded.
+    license_url: 'https://www.die-bibel.de/impressum'
+    # die-bibel.de addresses books by USFM code (`JHN`), not by the OSIS code
+    # the locator carries (`John`), so the spelling is mapped per resolver.
+    # An unknown code silently renders Matthäus 1 rather than erroring, so
+    # every entry below was checked against the rendered chapter title.
+    vars:
+      bookUsfm:
+        from: book
+        map:
+          Matt: MAT
+          Mark: MRK
+          Luke: LUK
+          John: JHN
+          Acts: ACT
+          Rom: ROM
+          1Cor: 1CO
+          2Cor: 2CO
+          Gal: GAL
+          Eph: EPH
+          Phil: PHP
+          Col: COL
+          1Thess: 1TH
+          2Thess: 2TH
+          1Tim: 1TI
+          2Tim: 2TI
+          Titus: TIT
+          Phlm: PHM
+          Heb: HEB
+          Jas: JAS
+          1Pet: 1PE
+          2Pet: 2PE
+          1John: 1JN
+          2John: 2JN
+          3John: 3JN
+          Jude: JUD
+          Rev: REV
+    url: 'https://www.die-bibel.de/bibel/NA28/{bookUsfm}.{chapter}/#{bookUsfm}.{chapter}.{verse}'
+    last_checked: '2026-08-12'
 
-# John verse counts per chapter (NA28 / SBLGNT). Other NT books to be added
-# incrementally.
+# The Wikisource King James Version resolver was removed: en.wikisource.org
+# migrated most books to one continuous page each, so `.../{Book}/Chapter_{n}`
+# 404s for 26 of the 27 books, and the surviving `#{verse}` anchors are not
+# unique within a page.
+
+# Verse counts per chapter for all 27 books, derived from the SBLGNT
+# (morphgnt/sblgnt) — the edition the STEP Bible resolver serves. Each entry is
+# the HIGHEST verse number in that chapter, not the number of verses printed:
+# SBLGNT omits verses traditional numbering reserves (Matt 17:21, John 5:4, the
+# bracketed pericope adulterae, whose first verse is John 7:53), and those
+# numbers are still cited. 7,954 references in total.
 references_range:
+  - kind: book_chapter_verse
+    book: Matt
+    counts:
+      [
+        25,
+        23,
+        17,
+        25,
+        48,
+        34,
+        29,
+        34,
+        38,
+        42,
+        30,
+        50,
+        58,
+        36,
+        39,
+        28,
+        27,
+        35,
+        30,
+        34,
+        46,
+        46,
+        39,
+        51,
+        46,
+        75,
+        66,
+        20,
+      ]
+  - kind: book_chapter_verse
+    book: Mark
+    counts: [45, 28, 35, 41, 43, 56, 37, 38, 50, 52, 33, 44, 37, 72, 47, 20]
+  - kind: book_chapter_verse
+    book: Luke
+    counts:
+      [
+        80,
+        52,
+        38,
+        44,
+        39,
+        49,
+        50,
+        56,
+        62,
+        42,
+        54,
+        59,
+        35,
+        35,
+        32,
+        31,
+        37,
+        43,
+        48,
+        47,
+        38,
+        71,
+        56,
+        53,
+      ]
   - kind: book_chapter_verse
     book: John
     counts:
@@ -73,4 +180,127 @@ references_range:
         42,
         31,
         25,
+      ]
+  - kind: book_chapter_verse
+    book: Acts
+    counts:
+      [
+        26,
+        47,
+        26,
+        37,
+        42,
+        15,
+        60,
+        40,
+        43,
+        48,
+        30,
+        25,
+        52,
+        28,
+        41,
+        40,
+        34,
+        28,
+        40,
+        38,
+        40,
+        30,
+        35,
+        27,
+        27,
+        32,
+        44,
+        31,
+      ]
+  - kind: book_chapter_verse
+    book: Rom
+    counts: [32, 29, 31, 25, 21, 23, 25, 39, 33, 21, 36, 21, 14, 23, 33, 24]
+  - kind: book_chapter_verse
+    book: 1Cor
+    counts: [31, 16, 23, 21, 13, 20, 40, 13, 27, 33, 34, 31, 13, 40, 58, 24]
+  - kind: book_chapter_verse
+    book: 2Cor
+    counts: [24, 17, 18, 18, 21, 18, 16, 24, 15, 18, 33, 21, 13]
+  - kind: book_chapter_verse
+    book: Gal
+    counts: [24, 21, 29, 31, 26, 18]
+  - kind: book_chapter_verse
+    book: Eph
+    counts: [23, 22, 21, 32, 33, 24]
+  - kind: book_chapter_verse
+    book: Phil
+    counts: [30, 30, 21, 23]
+  - kind: book_chapter_verse
+    book: Col
+    counts: [29, 23, 25, 18]
+  - kind: book_chapter_verse
+    book: 1Thess
+    counts: [10, 20, 13, 18, 28]
+  - kind: book_chapter_verse
+    book: 2Thess
+    counts: [12, 17, 18]
+  - kind: book_chapter_verse
+    book: 1Tim
+    counts: [20, 15, 16, 16, 25, 21]
+  - kind: book_chapter_verse
+    book: 2Tim
+    counts: [18, 26, 17, 22]
+  - kind: book_chapter_verse
+    book: Titus
+    counts: [16, 15, 15]
+  - kind: book_chapter_verse
+    book: Phlm
+    counts: [25]
+  - kind: book_chapter_verse
+    book: Heb
+    counts: [14, 18, 19, 16, 14, 20, 28, 13, 28, 39, 40, 29, 25]
+  - kind: book_chapter_verse
+    book: Jas
+    counts: [27, 26, 18, 17, 20]
+  - kind: book_chapter_verse
+    book: 1Pet
+    counts: [25, 25, 22, 19, 14]
+  - kind: book_chapter_verse
+    book: 2Pet
+    counts: [21, 22, 18]
+  - kind: book_chapter_verse
+    book: 1John
+    counts: [10, 29, 24, 21, 21]
+  - kind: book_chapter_verse
+    book: 2John
+    counts: [13]
+  - kind: book_chapter_verse
+    book: 3John
+    counts: [15]
+  - kind: book_chapter_verse
+    book: Jude
+    counts: [25]
+  - kind: book_chapter_verse
+    book: Rev
+    counts:
+      [
+        20,
+        29,
+        22,
+        11,
+        14,
+        17,
+        17,
+        13,
+        21,
+        11,
+        19,
+        18,
+        18,
+        20,
+        8,
+        21,
+        18,
+        24,
+        21,
+        15,
+        27,
+        21,
       ]
