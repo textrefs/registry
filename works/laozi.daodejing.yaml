@@ -3,7 +3,7 @@ work:
   preferred_label: Daodejing
   status: draft
   created: 2026-05-31
-  modified: 2026-08-11
+  modified: 2026-08-25
   creators:
     - kind: person
       family: Laozi
@@ -118,99 +118,6 @@ resolvers:
         79: 'https://ctext.org/dao-de-jing/ens#n11670'
         80: 'https://ctext.org/dao-de-jing/ens#n11671'
         81: 'https://ctext.org/dao-de-jing/ens#n11672'
-
-  - provider: Wikisource
-    edition: 'Daodejing, Wang Bi recension (道德經 王弼本)'
-    language: lzh
-    access: open
-    license: CC-BY-SA-4.0
-    # Single page with per-chapter anchors written in Chinese numerals,
-    # e.g. `#一章`, `#四十二章`, `#八十一章`. The compiler has no
-    # arabic-to-Chinese-numeral derivation, so each chapter is listed.
-    last_checked: '2026-06-03'
-    url_by:
-      chapter:
-        1: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#一章'
-        2: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二章'
-        3: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三章'
-        4: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四章'
-        5: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五章'
-        6: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六章'
-        7: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七章'
-        8: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#八章'
-        9: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#九章'
-        10: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十章'
-        11: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十一章'
-        12: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十二章'
-        13: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十三章'
-        14: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十四章'
-        15: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十五章'
-        16: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十六章'
-        17: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十七章'
-        18: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十八章'
-        19: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#十九章'
-        20: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十章'
-        21: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十一章'
-        22: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十二章'
-        23: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十三章'
-        24: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十四章'
-        25: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十五章'
-        26: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十六章'
-        27: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十七章'
-        28: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十八章'
-        29: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#二十九章'
-        30: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十章'
-        31: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十一章'
-        32: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十二章'
-        33: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十三章'
-        34: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十四章'
-        35: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十五章'
-        36: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十六章'
-        37: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十七章'
-        38: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十八章'
-        39: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#三十九章'
-        40: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十章'
-        41: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十一章'
-        42: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十二章'
-        43: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十三章'
-        44: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十四章'
-        45: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十五章'
-        46: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十六章'
-        47: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十七章'
-        48: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十八章'
-        49: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#四十九章'
-        50: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十章'
-        51: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十一章'
-        52: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十二章'
-        53: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十三章'
-        54: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十四章'
-        55: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十五章'
-        56: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十六章'
-        57: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十七章'
-        58: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十八章'
-        59: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#五十九章'
-        60: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十章'
-        61: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十一章'
-        62: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十二章'
-        63: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十三章'
-        64: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十四章'
-        65: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十五章'
-        66: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十六章'
-        67: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十七章'
-        68: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十八章'
-        69: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#六十九章'
-        70: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十章'
-        71: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十一章'
-        72: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十二章'
-        73: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十三章'
-        74: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十四章'
-        75: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十五章'
-        76: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十六章'
-        77: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十七章'
-        78: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十八章'
-        79: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#七十九章'
-        80: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#八十章'
-        81: 'https://zh.wikisource.org/wiki/道德經_(王弼本)#八十一章'
 
 references_range:
   - kind: integer
