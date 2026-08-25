@@ -3,7 +3,7 @@ work:
   preferred_label: Nicomachean Ethics
   status: draft
   created: 2026-05-31
-  modified: 2026-08-12
+  modified: 2026-08-25
   creators:
     - kind: person
       family: Aristotle
@@ -28,21 +28,38 @@ mappings:
 
 resolvers:
   - provider: Perseus Digital Library
-    edition: 'Aristotle, Nicomachean Ethics (Bywater, OCT)'
-    language: grc
+    edition: 'Aristotle, Nicomachean Ethics, tr. H. Rackham (Loeb, 1934)'
+    language: en
     access: open
     license: CC-BY-SA-3.0
     license_url: 'https://www.perseus.tufts.edu/hopper/opensource'
     # Perseus accepts the short citation form "Aristot. Nic. Eth. {page}{column}"
     # in the `doc` query; lands on the Bekker column. Line is not addressable.
+    # The short form serves Rackham's English translation, not the Greek; the
+    # Greek edition is the second entry below.
     url: 'https://www.perseus.tufts.edu/hopper/text?doc=Aristot.+Nic.+Eth.+{page}{column}'
-    last_checked: '2026-06-03'
+    last_checked: '2026-08-25'
+  - provider: Perseus Digital Library
+    edition: 'Aristotle, Ethica Nicomachea, ed. J. Bywater (OCT, 1894)'
+    language: grc
+    access: open
+    license: CC-BY-SA-3.0
+    license_url: 'https://www.perseus.tufts.edu/hopper/opensource'
+    # The long `doc` form addresses the Greek OCT text by Bekker page and
+    # column. The literal space in "bekker page" must stay percent-encoded.
+    # Checked 2026-08-25: `1094a` → πᾶσα τέχνη …, `1172a` → the discussion of
+    # pleasure. Control: `9999z` → "No document found", so bad input is
+    # rejected.
+    url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0053:bekker%20page={page}{column}'
+    last_checked: '2026-08-25'
 
-# No second resolver. The Perseus canonical-greekLit edition is indexed by
-# Bywater book.section, not Bekker page+column, so a Scaife CTS URN cannot be
-# derived from a Bekker locator alone; and a translation with no Bekker anchor
-# would resolve every one of the ~5,220 references to the same landing page,
-# which tells a reader less than no link at all.
+# No Scaife resolver. The edition Scaife hosts for this work
+# (tlg0086.tlg010.perseus-grc2) is cited by book and chapter, not by Bekker
+# page. Scaife serves the last chunk of the work for any passage it cannot
+# parse, so a {page}{column} template would silently resolve everything to the
+# discussion of pleasure in Book X at HTTP 200. Checked 2026-08-25: `:1094a`,
+# `:1094a1` and `:10.1` all return the text of 1172a. Revisit if Scaife
+# ingests perseus-eng1, which IS cited by Bekker.
 
 # Page ranges by book: I 1094a–1103a, II 1103a–1109b, III 1109b–1119b,
 # IV 1119b–1128b, V 1129a–1138b, VI 1138b–1145a, VII 1145a–1154b,

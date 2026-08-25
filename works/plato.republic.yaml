@@ -3,7 +3,7 @@ work:
   preferred_label: Republic
   status: draft
   created: 2026-05-31
-  modified: 2026-08-12
+  modified: 2026-08-25
   creators:
     - kind: person
       family: Plato
@@ -28,22 +28,37 @@ mappings:
 
 resolvers:
   - provider: Perseus Digital Library
-    edition: 'Plato, Republic (Burnet, OCT)'
-    language: grc
+    edition: 'Plato, Republic, tr. Paul Shorey (Loeb, 1969)'
+    language: en
     access: open
     license: CC-BY-SA-3.0
     license_url: 'https://www.perseus.tufts.edu/hopper/opensource'
     # Perseus accepts the short citation form "Plat. Rep. {page}{section}" in
     # the `doc` query. Sub-line is not addressable; resolver lands on the
-    # Stephanus section.
+    # Stephanus section. The short form serves Shorey's English translation,
+    # not the Greek; the Greek edition is the second entry below.
     url: 'https://www.perseus.tufts.edu/hopper/text?doc=Plat.+Rep.+{page}{section}'
-    last_checked: '2026-06-03'
+    last_checked: '2026-08-25'
+  - provider: Perseus Digital Library
+    edition: 'Plato, Platonis Opera, ed. John Burnet (OCT, 1903)'
+    language: grc
+    access: open
+    license: CC-BY-SA-3.0
+    license_url: 'https://www.perseus.tufts.edu/hopper/opensource'
+    # The long `doc` form addresses the Greek OCT text by Stephanus section
+    # alone — no book component is needed. Checked 2026-08-25: `section=327a`
+    # → κατέβην χθὲς …, `section=595a` → καὶ μήν … (Book X). Control:
+    # `section=9999z` → "No document found", so bad input is rejected.
+    url: 'https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0167:section={page}{section}'
+    last_checked: '2026-08-25'
 
-# No second resolver. The Perseus canonical-greekLit edition exposes only
-# integer Stephanus pages under a book prefix (no `a`–`e` section letter), so a
-# Scaife CTS URN cannot be derived from the Stephanus locator without losing the
-# section; and a translation with no Stephanus anchor would resolve all 1,475
-# references to the same landing page, which tells a reader less than no link.
+# No Scaife resolver. The edition Scaife hosts for this work
+# (tlg0059.tlg030.perseus-grc2) is cited by book and chapter, not by Stephanus
+# page. Scaife serves the last chunk of the work for any passage it cannot
+# parse, so a {page}{section} template would silently resolve everything to
+# Book X at HTTP 200. Checked 2026-08-25: `:327a` and `:999z` both return the
+# text of 595a. Revisit if Scaife ingests perseus-eng1, which IS cited by
+# Stephanus.
 
 # Republic spans 327a–621d; all five sections per page → 1,475 references.
 references_range:
