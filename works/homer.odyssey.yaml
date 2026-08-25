@@ -1,9 +1,12 @@
 work:
   key: homer.odyssey
   preferred_label: Odyssey
+  alternative_labels:
+    - 'Odyssee'
+    - 'Odyssea'
   status: draft
   created: 2026-05-31
-  modified: 2026-08-11
+  modified: 2026-08-25
   creators:
     - kind: person
       family: Homer

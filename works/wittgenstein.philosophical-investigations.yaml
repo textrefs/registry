@@ -1,6 +1,10 @@
 work:
   key: wittgenstein.philosophical-investigations
   preferred_label: Philosophical Investigations
+  alternative_labels:
+    - 'PI'
+    - 'PU'
+    - 'Philosophische Untersuchungen'
   status: draft
   created: 2026-06-02
   modified: 2026-08-25

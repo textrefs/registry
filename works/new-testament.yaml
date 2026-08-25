@@ -1,9 +1,12 @@
 work:
   key: new-testament
   preferred_label: New Testament
+  alternative_labels:
+    - 'NT'
+    - 'Neues Testament'
   status: draft
   created: 2026-05-31
-  modified: 2026-08-12
+  modified: 2026-08-25
 
 citation_system: bible-book-chapter-verse
 
