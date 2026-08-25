@@ -33,9 +33,16 @@ Get `work.key`, `work.preferred_label`, and `work.creators` right on the first a
   - Bare slug for unattributed corpora: `tanakh`, `dhammapada`, `new-testament`, `quran`.
   - Multiple works per author with the same short title: disambiguate inside the work-slug, not by promoting the author. E.g. `aristotle.nicomachean-ethics`, `aristotle.eudemian-ethics`.
 
-- **`preferred_label`** — the display title. No parenthetical disambiguator: author goes in `creators`, edition (SBLGNT, OCT, …) goes on the resolver target, alt-names belong in a future `alt_labels` field.
+- **`preferred_label`** — the display title. No parenthetical disambiguator: author goes in `creators`, edition (SBLGNT, OCT, …) goes on the resolver target, alt-names go in `alternative_labels`.
   - Attributed: just the title — `Iliad`, `Republic`, `Tractatus Logico-Philosophicus`.
   - Anonymous/collective: the conventional English name — `Tanakh`, `Dhammapada`, `New Testament`.
+
+- **`alternative_labels`** — optional list of the other names a scholar searches by: abbreviations (`NE`, `LXX`, `PI`), Latin or Greek titles, and translated titles. The registry browser matches this list, so a reader who types `NE` still finds the work. Published as `skos:altLabel` (ADR-0007).
+  - Established forms only. Do not invent a short form.
+  - Unique within the work, and never a repeat of `preferred_label`. The compiler rejects both.
+  - Two different works may share an entry — `Ethics` fits Aristotle and Spinoza. This is allowed.
+  - Omit the key when there is nothing to add. An empty list is rejected.
+  - Not a UUIDv5 seed field, so adding or correcting a label never mints a new ID.
 
 - **`creators`** — CSL-style entries matching the `Creator` schema. Follow CSL-JSON conventions so citeproc-js / Zotero render correctly.
   - Standard names with family + given: `kind: person`, e.g. `{ family: Wittgenstein, given: Ludwig }`.
