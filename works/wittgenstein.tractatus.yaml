@@ -1,6 +1,10 @@
 work:
   key: wittgenstein.tractatus
   preferred_label: Tractatus Logico-Philosophicus
+  alternative_labels:
+    - 'TLP'
+    - 'Tractatus'
+    - 'Logisch-philosophische Abhandlung'
   status: draft
   created: 2026-06-02
   modified: 2026-08-25

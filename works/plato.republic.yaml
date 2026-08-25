@@ -1,6 +1,10 @@
 work:
   key: plato.republic
   preferred_label: Republic
+  alternative_labels:
+    - 'Politeia'
+    - 'Res Publica'
+    - 'Der Staat'
   status: draft
   created: 2026-05-31
   modified: 2026-08-25

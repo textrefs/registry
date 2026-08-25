@@ -1,6 +1,11 @@
 work:
   key: aristotle.nicomachean-ethics
   preferred_label: Nicomachean Ethics
+  alternative_labels:
+    - 'NE'
+    - 'EN'
+    - 'Nikomachische Ethik'
+    - 'Ethica Nicomachea'
   status: draft
   created: 2026-05-31
   modified: 2026-08-25

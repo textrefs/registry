@@ -1,6 +1,10 @@
 work:
   key: murasaki-shikibu.genji
   preferred_label: The Tale of Genji
+  alternative_labels:
+    - 'Genji'
+    - 'Genji monogatari'
+    - '源氏物語'
   status: draft
   created: 2026-05-31
   modified: 2026-08-25

@@ -1,6 +1,9 @@
 work:
   key: confucius.analects
   preferred_label: Analects
+  alternative_labels:
+    - 'Lunyu'
+    - '論語'
   status: draft
   created: 2026-05-31
   modified: 2026-08-25

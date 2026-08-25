@@ -1,6 +1,9 @@
 work:
   key: laozi.daodejing
   preferred_label: Daodejing
+  alternative_labels:
+    - 'Tao Te Ching'
+    - '道德經'
   status: draft
   created: 2026-05-31
   modified: 2026-08-25

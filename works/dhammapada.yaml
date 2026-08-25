@@ -1,9 +1,12 @@
 work:
   key: dhammapada
   preferred_label: Dhammapada
+  alternative_labels:
+    - 'Dhp'
+    - 'धम्मपद'
   status: draft
   created: 2026-05-31
-  modified: 2026-08-12
+  modified: 2026-08-25
 
 citation_system: dhammapada-chapter-verse
 
