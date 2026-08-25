@@ -53,14 +53,21 @@ resolvers:
     url: 'https://www.wittgensteinproject.org/w/index.php/फ़िलोसॉफ़िकल_इन्वेस्टिगेशंस#{section}'
     last_checked: '2026-08-25'
 
-# No Wittgenstein Archives resolver. The Wittgenstein Archives at the University
-# of Bergen (WAB) and Wittgenstein Source address the Nachlass by von Wright
-# siglum with leaf and element position (Ms-114,55r[3]), not by published section number. No
-# public concordance from PI section numbers to Nachlass sigla was found on either
-# site, so WAB cannot resolve this work's locators. wittgensteinsource.org also
-# refuses HTTPS: port 443 declines the connection. Checked 2026-08-25. If the
-# Nachlass is wanted for its own sake, it is an `additional_systems:` block with
-# its own citation system, not a replacement for this one.
+# No Wittgenstein Archives resolver. The Wittgenstein Archives at the
+# University of Bergen (WAB) and Wittgenstein Source address the Nachlass by von
+# Wright siglum with leaf and element position (Ms-114,55r[3]), not by published
+# section number. No public concordance from PI sections to Nachlass sigla was
+# found on either site, so WAB cannot resolve this work's locators.
+# wittgensteinsource.org also refuses HTTPS: port 443 declines the connection.
+# Checked 2026-08-25. If the Nachlass is wanted for its own sake it is an
+# `additional_systems:` block with its own citation system, not a replacement
+# for this one.
+
+# The Ludwig Wittgenstein Project is a reproduction of published texts, not a
+# critical edition; every `edition:` above says so. All four pages were checked
+# on 2026-08-25: each returns HTTP 200 and carries per-section anchors.
+# Control: `id="9999"` is absent, so a bad locator lands at the top of the page
+# rather than on the wrong section.
 
 # The Ludwig Wittgenstein Project page exposes anchors for §§1-693.
 references_range:
