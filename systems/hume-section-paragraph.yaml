@@ -1,0 +1,12 @@
+key: hume-section-paragraph
+preferred_label: Hume section-and-paragraph
+description: >-
+  Hume's first Enquiry cited by section and paragraph (`section.paragraph`),
+  e.g. 1.1 through 12.34, following the paragraph numbering of Hume Texts
+  Online. 12 sections, 255 paragraphs.
+# Named capture groups expose `{section}` and `{paragraph}` to URL templates,
+# plus the compiler's zero-padded variants.
+locator_regex: '^(?<section>[1-9]|1[0-2])\.(?<paragraph>[1-9][0-9]{0,2})$'
+status: draft
+created: 2026-08-26
+modified: 2026-08-26

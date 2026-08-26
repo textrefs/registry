@@ -1,0 +1,58 @@
+work:
+  key: hume.enquiry-human-understanding
+  preferred_label: An Enquiry concerning Human Understanding
+  alternative_labels:
+    - 'EHU'
+    - 'E'
+    - 'Enquiry concerning Human Understanding'
+    - 'First Enquiry'
+    - 'Philosophical Essays Concerning Human Understanding'
+    - 'Untersuchung über den menschlichen Verstand'
+  status: draft
+  created: 2026-08-26
+  modified: 2026-08-26
+  creators:
+    - kind: person
+      family: Hume
+      given: David
+
+citation_system: hume-section-paragraph
+
+mappings:
+  - relation: alternateOf
+    conforms_to: 'https://www.wikidata.org/'
+    identifier: 'https://www.wikidata.org/entity/Q1306656'
+    source: manual-curation
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+  - relation: isReferencedBy
+    conforms_to: 'https://en.wikipedia.org/'
+    identifier: 'https://en.wikipedia.org/wiki/An_Enquiry_Concerning_Human_Understanding'
+    source: 'wikidata:Q1306656'
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+
+resolvers:
+  - provider: Hume Texts Online
+    edition: 'Hume Texts Online, ed. Peter Millican (Hertford College, Oxford)'
+    language: en
+    access: open
+    # Per-section pages with a per-paragraph anchor. The site prints each
+    # paragraph's own citation ("E 10.1, SBN 109"), so the anchor and the
+    # locator agree by construction. Checked 2026-08-26: `/texts/e/10#1` ->
+    # "E 10.1, SBN 109"; `#41` -> "E 10.41, SBN 130-1". Controls: `/texts/e/99`,
+    # `/texts/t/9/9/9` and `/texts/zzz/1` all return a real HTTP 404.
+    #
+    # The site's own siglum is `E`, not `EHU`; both are in alternative_labels.
+    url: 'https://davidhume.org/texts/e/{section}#{paragraph}'
+    last_checked: '2026-08-26'
+
+# Paragraph counts per section, harvested from Hume Texts Online on 2026-08-26
+# by reading the highest paragraph anchor on each section page, and verified at
+# the boundary: on `/texts/e/10` the id `41` is present and `42` is absent; the
+# same check passed for sections 1, 3 and 12. Sum = 255 paragraphs.
+references_range:
+  - kind: chapter_verse
+    counts: [17, 9, 3, 23, 22, 4, 30, 36, 6, 41, 30, 34]
