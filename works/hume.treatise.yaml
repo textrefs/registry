@@ -1,0 +1,90 @@
+work:
+  key: hume.treatise
+  preferred_label: A Treatise of Human Nature
+  alternative_labels:
+    - 'T'
+    - 'THN'
+    - 'Treatise'
+    - 'Traktat über die menschliche Natur'
+  status: draft
+  created: 2026-08-26
+  modified: 2026-08-26
+  creators:
+    - kind: person
+      family: Hume
+      given: David
+
+citation_system: hume-book-part-section-paragraph
+
+mappings:
+  - relation: alternateOf
+    conforms_to: 'https://www.wikidata.org/'
+    identifier: 'https://www.wikidata.org/entity/Q2451675'
+    source: manual-curation
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+  - relation: isReferencedBy
+    conforms_to: 'https://en.wikipedia.org/'
+    identifier: 'https://en.wikipedia.org/wiki/A_Treatise_of_Human_Nature'
+    source: 'wikidata:Q2451675'
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+
+resolvers:
+  - provider: Hume Texts Online
+    edition: 'Hume Texts Online, ed. Peter Millican (Hertford College, Oxford)'
+    language: en
+    access: open
+    # Per-section pages with a per-paragraph anchor. The site prints each
+    # paragraph's own citation ("T 1.3.6.4, SBN 88-9"), so the anchor and the
+    # locator agree by construction. Checked 2026-08-26; controls
+    # `/texts/t/9/9/9` and `/texts/zzz/1` return a real HTTP 404.
+    url: 'https://davidhume.org/texts/t/{book}/{part}/{section}#{paragraph}'
+    last_checked: '2026-08-26'
+
+# Structure and paragraph counts harvested from Hume Texts Online on
+# 2026-08-26 by walking `/texts/t/{book}/{part}/{section}` until the site
+# returned 404, then reading the highest paragraph anchor on each page.
+# Result: 3 books, 10 parts, 90 sections, 1,213 paragraphs — the canonical
+# shape of the Treatise (I.i-iv, II.i-iii, III.i-iii).
+#
+# Two sections are genuinely tiny and were checked by hand rather than
+# assumed: T 1.1.2 has exactly one paragraph (id 2 absent) and T 3.2.4 has
+# exactly two (id 3 absent).
+#
+# One `book_chapter_verse` block per book-and-part, with the `book` field
+# carrying the `{book}.{part}` prefix, so the expansion emits
+# `book.part.section.paragraph` directly.
+references_range:
+  - kind: book_chapter_verse
+    book: '1.1'
+    counts: [12, 1, 4, 7, 10, 3, 18]
+  - kind: book_chapter_verse
+    book: '1.2'
+    counts: [5, 10, 17, 33, 29, 9]
+  - kind: book_chapter_verse
+    book: '1.3'
+    counts: [7, 16, 9, 3, 7, 16, 8, 17, 19, 12, 13, 25, 20, 36, 12, 9]
+  - kind: book_chapter_verse
+    book: '1.4'
+    counts: [12, 57, 11, 15, 35, 23, 15]
+  - kind: book_chapter_verse
+    book: '2.1'
+    counts: [4, 6, 7, 5, 11, 10, 8, 9, 13, 12, 19, 9]
+  - kind: book_chapter_verse
+    book: '2.2'
+    counts: [9, 28, 10, 13, 21, 6, 6, 20, 20, 10, 6, 8]
+  - kind: book_chapter_verse
+    book: '2.3'
+    counts: [18, 8, 10, 10, 5, 10, 9, 13, 32, 12]
+  - kind: book_chapter_verse
+    book: '3.1'
+    counts: [27, 11]
+  - kind: book_chapter_verse
+    book: '3.2'
+    counts: [19, 28, 11, 2, 15, 11, 8, 9, 4, 19, 5, 9]
+  - kind: book_chapter_verse
+    book: '3.3'
+    counts: [31, 17, 9, 14, 6, 6]

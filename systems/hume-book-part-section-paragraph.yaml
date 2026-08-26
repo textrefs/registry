@@ -1,0 +1,13 @@
+key: hume-book-part-section-paragraph
+preferred_label: Hume book-part-section-paragraph
+description: >-
+  Hume's Treatise of Human Nature cited by book, part, section and paragraph
+  (`book.part.section.paragraph`), e.g. 1.3.6.4, following the paragraph
+  numbering of Hume Texts Online. 3 books, 10 parts, 90 sections,
+  1,213 paragraphs.
+# Named capture groups expose `{book}`, `{part}`, `{section}` and
+# `{paragraph}` to URL templates.
+locator_regex: '^(?<book>[1-3])\.(?<part>[1-4])\.(?<section>[1-9]|1[0-6])\.(?<paragraph>[1-9][0-9]{0,2})$'
+status: draft
+created: 2026-08-26
+modified: 2026-08-26
