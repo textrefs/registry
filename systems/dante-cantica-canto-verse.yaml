@@ -1,0 +1,13 @@
+key: dante-cantica-canto-verse
+preferred_label: Dante cantica-canto-verse
+description: >-
+  Dante's Divina Commedia cited by cantica, canto and verse
+  (`cantica.canto.verse`), e.g. Inf.1.1, Purg.13.25, Par.33.145. The cantica is
+  a fixed three-value vocabulary: Inf, Purg, Par. 100 cantos, 14,233 verses.
+# Named capture groups expose `{cantica}`, `{canto}` and `{verse}` to URL
+# templates. The cantica is part of the locator, not a separate field, because
+# a canto number alone does not identify a passage.
+locator_regex: '^(?<cantica>Inf|Purg|Par)\.(?<canto>[1-9]|[12][0-9]|3[0-4])\.(?<verse>[1-9][0-9]{0,2})$'
+status: draft
+created: 2026-08-26
+modified: 2026-08-26
