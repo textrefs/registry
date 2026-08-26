@@ -7,7 +7,11 @@ description: >-
   1,213 paragraphs.
 # Named capture groups expose `{book}`, `{part}`, `{section}` and
 # `{paragraph}` to URL templates.
-locator_regex: '^(?<book>[1-3])\.(?<part>[1-4])\.(?<section>[1-9]|1[0-6])\.(?<paragraph>[1-9][0-9]{0,2})$'
+# The leading lookahead pins the book-and-part pairs that actually exist —
+# 1.1-1.4, 2.1-2.3, 3.1-3.3 — so 2.4.x.y and 3.4.x.y are rejected by the shape
+# check rather than merely going unregistered. The named groups stay single and
+# unduplicated, so URL templating is unaffected.
+locator_regex: '^(?=1\.[1-4]|2\.[1-3]|3\.[1-3])(?<book>[1-3])\.(?<part>[1-4])\.(?<section>[1-9]|1[0-6])\.(?<paragraph>[1-9][0-9]{0,2})$'
 status: draft
 created: 2026-08-26
 modified: 2026-08-26
