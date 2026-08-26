@@ -1,0 +1,219 @@
+work:
+  key: dante.commedia
+  preferred_label: Divina Commedia
+  alternative_labels:
+    - 'Commedia'
+    - 'The Divine Comedy'
+    - 'Divine Comedy'
+    - 'Göttliche Komödie'
+    - 'Comedìa'
+  status: draft
+  created: 2026-08-26
+  modified: 2026-08-26
+  creators:
+    - kind: person
+      family: Alighieri
+      given: Dante
+
+citation_system: dante-cantica-canto-verse
+
+mappings:
+  - relation: alternateOf
+    conforms_to: 'https://www.wikidata.org/'
+    identifier: 'https://www.wikidata.org/entity/Q40185'
+    source: manual-curation
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+  - relation: isReferencedBy
+    conforms_to: 'https://en.wikipedia.org/'
+    identifier: 'https://en.wikipedia.org/wiki/Divine_Comedy'
+    source: 'wikidata:Q40185'
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+
+resolvers:
+  - provider: Princeton Dante Project
+    edition: 'Princeton Dante Project (2.0)'
+    language: it
+    access: open
+    # The CGI addresses a single verse: INP_START is the starting line and
+    # INP_LEN=1 selects one. LANG=1 is the Italian text. The cantica vocabulary
+    # Inf/Purg/Par is the locator's own vocabulary, so no mapping is needed.
+    #
+    # Checked 2026-08-26 with cross-controls: Inf.1.1 -> "Nel mezzo del cammin
+    # di nostra vita"; Inf.5.121 -> "Nessun maggior dolore"; Par.33.145 ->
+    # "l'amor che move il sole e l'altre stelle." The Inf.1.1 page contains no
+    # occurrence of Inf.5.121's text and vice versa.
+    #
+    # CAUTION for link checking: an invalid canto or verse returns HTTP 200
+    # with an 854-byte error page that leaks a raw SQL string, not a 4xx. A
+    # status-code check will pass a bad URL here. Check the body. The resolver
+    # does not serve the wrong passage, which is the failure that matters.
+    #
+    # This is a small academic server. Pace any automated checking; ~20 rapid
+    # requests were enough to make it start refusing connections.
+    url: 'https://dante.princeton.edu/cgi-bin/dante/campuscgi/mpb/GetCantoSection.pl?INP_POEM={cantica}&INP_SECT={canto}&INP_START={verse}&INP_LEN=1&LANG=1'
+    last_checked: '2026-08-26'
+
+  - provider: Dante Lab (Dartmouth College)
+    edition: 'Dante Lab Reader — poem with parallel commentaries'
+    language: it
+    access: open
+    # CANTO-LEVEL ONLY. The reader takes no verse parameter, so every verse of a
+    # canto resolves to the same page. Added deliberately as a reading companion
+    # beside the verse-level Princeton resolver, not as a replacement. Checked
+    # 2026-08-26: cantica 1 canto 5, cantica 2 canto 13 and cantica 3 canto 33
+    # each render the right canto.
+    #
+    # PLAINTEXT HTTP, ON PURPOSE. dantelab.dartmouth.edu presents a TLS
+    # certificate for CN=*.herokuapp.com with SAN DNS:*.herokuapp.com, which does
+    # not match the hostname, so an https:// URL fails certificate validation in
+    # curl and in browsers. Only http:// works. This is the same condition that
+    # disqualified wittgensteinsource.org in #24; it is accepted here as a
+    # deliberate exception. Revisit if Dartmouth fixes the certificate.
+    #
+    # The next-generation reader posts to /queries with query[cantica],
+    # query[canto] and query[line] over AJAX. Those are POST-only — /queries
+    # returns HTTP 500 on GET, and the reader ignores them as query parameters,
+    # always rendering Inferno 1. The older reader[...] parameters below do work
+    # as a GET deep link, which is why they are used.
+    vars:
+      canticaNum:
+        from: cantica
+        map:
+          Inf: '1'
+          Purg: '2'
+          Par: '3'
+    url: 'http://dantelab.dartmouth.edu/reader?reader%5Bcantica%5D={canticaNum}&reader%5Bcanto%5D={canto}'
+    last_checked: '2026-08-26'
+
+# No Dartmouth Dante Project resolver. search_view.php accepts cantica, canto and
+# line, but every request answers "Your session has timed out" (67 bytes), with
+# and without an established cookie jar. It is not deep-linkable, and it serves
+# commentaries rather than the poem. Checked 2026-08-26.
+
+# Verse counts per canto, harvested from the Princeton Dante Project on
+# 2026-08-26 by requesting each canto with INP_LEN=250 and reading the highest
+# verse number returned.
+#
+# Independently confirmed: Inferno 4,720 + Purgatorio 4,755 + Paradiso 4,758 =
+# 14,233, the canonical line count of the Commedia. An earlier harvest that had
+# been silently degraded by rate limiting summed to 13,939 and was discarded.
+references_range:
+  - kind: book_chapter_verse
+    book: 'Inf'
+    counts:
+      [
+        136,
+        142,
+        136,
+        151,
+        142,
+        115,
+        130,
+        130,
+        133,
+        136,
+        115,
+        139,
+        151,
+        142,
+        124,
+        136,
+        136,
+        136,
+        133,
+        130,
+        139,
+        151,
+        148,
+        151,
+        151,
+        142,
+        136,
+        142,
+        139,
+        148,
+        145,
+        139,
+        157,
+        139,
+      ]
+  - kind: book_chapter_verse
+    book: 'Purg'
+    counts:
+      [
+        136,
+        133,
+        145,
+        139,
+        136,
+        151,
+        136,
+        139,
+        145,
+        139,
+        142,
+        136,
+        154,
+        151,
+        145,
+        145,
+        139,
+        145,
+        145,
+        151,
+        136,
+        154,
+        133,
+        154,
+        139,
+        148,
+        142,
+        148,
+        154,
+        145,
+        145,
+        160,
+        145,
+      ]
+  - kind: book_chapter_verse
+    book: 'Par'
+    counts:
+      [
+        142,
+        148,
+        130,
+        142,
+        139,
+        142,
+        148,
+        148,
+        142,
+        148,
+        139,
+        145,
+        142,
+        139,
+        148,
+        154,
+        142,
+        136,
+        148,
+        148,
+        142,
+        154,
+        139,
+        154,
+        139,
+        142,
+        148,
+        139,
+        145,
+        148,
+        142,
+        151,
+        145,
+      ]
