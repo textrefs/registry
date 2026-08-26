@@ -57,12 +57,38 @@ resolvers:
     url: 'https://dante.princeton.edu/cgi-bin/dante/campuscgi/mpb/GetCantoSection.pl?INP_POEM={cantica}&INP_SECT={canto}&INP_START={verse}&INP_LEN=1&LANG=1'
     last_checked: '2026-08-26'
 
-# No Dante Lab resolver. dantelab.dartmouth.edu presents a TLS certificate for
-# CN=*.herokuapp.com, which does not match the hostname, so HTTPS fails and only
-# plaintext HTTP works — the same disqualifier recorded for wittgensteinsource.org.
-# Its reader also stops at the canto and takes no verse parameter. Checked
-# 2026-08-26.
-#
+  - provider: Dante Lab (Dartmouth College)
+    edition: 'Dante Lab Reader — poem with parallel commentaries'
+    language: it
+    access: open
+    # CANTO-LEVEL ONLY. The reader takes no verse parameter, so every verse of a
+    # canto resolves to the same page. Added deliberately as a reading companion
+    # beside the verse-level Princeton resolver, not as a replacement. Checked
+    # 2026-08-26: cantica 1 canto 5, cantica 2 canto 13 and cantica 3 canto 33
+    # each render the right canto.
+    #
+    # PLAINTEXT HTTP, ON PURPOSE. dantelab.dartmouth.edu presents a TLS
+    # certificate for CN=*.herokuapp.com with SAN DNS:*.herokuapp.com, which does
+    # not match the hostname, so an https:// URL fails certificate validation in
+    # curl and in browsers. Only http:// works. This is the same condition that
+    # disqualified wittgensteinsource.org in #24; it is accepted here as a
+    # deliberate exception. Revisit if Dartmouth fixes the certificate.
+    #
+    # The next-generation reader posts to /queries with query[cantica],
+    # query[canto] and query[line] over AJAX. Those are POST-only — /queries
+    # returns HTTP 500 on GET, and the reader ignores them as query parameters,
+    # always rendering Inferno 1. The older reader[...] parameters below do work
+    # as a GET deep link, which is why they are used.
+    vars:
+      canticaNum:
+        from: cantica
+        map:
+          Inf: '1'
+          Purg: '2'
+          Par: '3'
+    url: 'http://dantelab.dartmouth.edu/reader?reader%5Bcantica%5D={canticaNum}&reader%5Bcanto%5D={canto}'
+    last_checked: '2026-08-26'
+
 # No Dartmouth Dante Project resolver. search_view.php accepts cantica, canto and
 # line, but every request answers "Your session has timed out" (67 bytes), with
 # and without an established cookie jar. It is not deep-linkable, and it serves
