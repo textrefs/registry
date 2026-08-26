@@ -1,0 +1,51 @@
+work:
+  key: nietzsche.menschliches-allzumenschliches
+  preferred_label: Menschliches, Allzumenschliches
+  alternative_labels:
+    - 'MA'
+    - 'Human, All Too Human'
+    - 'MA I'
+    - 'Menschliches Allzumenschliches I'
+  status: draft
+  created: 2026-08-26
+  modified: 2026-08-26
+  creators:
+    - kind: person
+      family: Nietzsche
+      given: Friedrich
+
+citation_system: integer-section
+
+mappings:
+  - relation: alternateOf
+    conforms_to: 'https://www.wikidata.org/'
+    identifier: 'https://www.wikidata.org/entity/Q1364539'
+    source: manual-curation
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+  - relation: isReferencedBy
+    conforms_to: 'https://en.wikipedia.org/'
+    identifier: 'https://en.wikipedia.org/wiki/Human,_All_Too_Human'
+    source: 'wikidata:Q1364539'
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+
+resolvers:
+  - provider: Nietzsche Source
+    edition: 'Digitale Kritische Gesamtausgabe (eKGWB), ed. Colli/Montinari (KGW/KSA)'
+    language: de
+    access: open
+    # The siglum is a per-work constant; the aphorism number is the locator.
+    # The path form is server-validated: a siglum-number pair that does not
+    # exist returns a real HTTP 404, so this resolver can be link-checked.
+    url: 'https://www.nietzschesource.org/eKGWB/MA-{section}'
+    last_checked: '2026-08-26'
+
+# Extent found on 2026-08-26 by binary search against the provider's own 404s,
+# then confirmed at the boundary: MA-638 resolves and MA-639 returns 404.
+references_range:
+  - kind: integer
+    from: 1
+    to: 638

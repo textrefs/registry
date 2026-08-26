@@ -1,0 +1,50 @@
+work:
+  key: nietzsche.geburt-der-tragoedie
+  preferred_label: Die Geburt der Tragödie
+  alternative_labels:
+    - 'GT'
+    - 'The Birth of Tragedy'
+    - 'GdT'
+  status: draft
+  created: 2026-08-26
+  modified: 2026-08-26
+  creators:
+    - kind: person
+      family: Nietzsche
+      given: Friedrich
+
+citation_system: integer-section
+
+mappings:
+  - relation: alternateOf
+    conforms_to: 'https://www.wikidata.org/'
+    identifier: 'https://www.wikidata.org/entity/Q1053359'
+    source: manual-curation
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+  - relation: isReferencedBy
+    conforms_to: 'https://en.wikipedia.org/'
+    identifier: 'https://en.wikipedia.org/wiki/The_Birth_of_Tragedy'
+    source: 'wikidata:Q1053359'
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+
+resolvers:
+  - provider: Nietzsche Source
+    edition: 'Digitale Kritische Gesamtausgabe (eKGWB), ed. Colli/Montinari (KGW/KSA)'
+    language: de
+    access: open
+    # The siglum is a per-work constant; the aphorism number is the locator.
+    # The path form is server-validated: a siglum-number pair that does not
+    # exist returns a real HTTP 404, so this resolver can be link-checked.
+    url: 'https://www.nietzschesource.org/eKGWB/GT-{section}'
+    last_checked: '2026-08-26'
+
+# Extent found on 2026-08-26 by binary search against the provider's own 404s,
+# then confirmed at the boundary: GT-25 resolves and GT-26 returns 404.
+references_range:
+  - kind: integer
+    from: 1
+    to: 25

@@ -1,0 +1,51 @@
+work:
+  key: nietzsche.morgenroete
+  preferred_label: Morgenröthe
+  alternative_labels:
+    - 'M'
+    - 'Daybreak'
+    - 'Morgenröte'
+    - 'The Dawn of Day'
+  status: draft
+  created: 2026-08-26
+  modified: 2026-08-26
+  creators:
+    - kind: person
+      family: Nietzsche
+      given: Friedrich
+
+citation_system: integer-section
+
+mappings:
+  - relation: alternateOf
+    conforms_to: 'https://www.wikidata.org/'
+    identifier: 'https://www.wikidata.org/entity/Q1947770'
+    source: manual-curation
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+  - relation: isReferencedBy
+    conforms_to: 'https://en.wikipedia.org/'
+    identifier: 'https://en.wikipedia.org/wiki/The_Dawn_of_Day'
+    source: 'wikidata:Q1947770'
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
+
+resolvers:
+  - provider: Nietzsche Source
+    edition: 'Digitale Kritische Gesamtausgabe (eKGWB), ed. Colli/Montinari (KGW/KSA)'
+    language: de
+    access: open
+    # The siglum is a per-work constant; the aphorism number is the locator.
+    # The path form is server-validated: a siglum-number pair that does not
+    # exist returns a real HTTP 404, so this resolver can be link-checked.
+    url: 'https://www.nietzschesource.org/eKGWB/M-{section}'
+    last_checked: '2026-08-26'
+
+# Extent found on 2026-08-26 by binary search against the provider's own 404s,
+# then confirmed at the boundary: M-575 resolves and M-576 returns 404.
+references_range:
+  - kind: integer
+    from: 1
+    to: 575
