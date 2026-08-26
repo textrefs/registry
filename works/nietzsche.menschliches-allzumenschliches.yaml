@@ -24,6 +24,13 @@ mappings:
     status: draft
     created: 2026-08-26
     modified: 2026-08-26
+  - relation: isReferencedBy
+    conforms_to: 'https://en.wikipedia.org/'
+    identifier: 'https://en.wikipedia.org/wiki/Human,_All_Too_Human'
+    source: 'wikidata:Q1364539'
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
 
 resolvers:
   - provider: Nietzsche Source

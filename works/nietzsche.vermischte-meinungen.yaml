@@ -15,11 +15,19 @@ work:
 
 citation_system: integer-section
 
-# No Wikidata mapping. A SPARQL query for every work with author = Q9358
-# (Friedrich Nietzsche) returns no separate item for this title; Wikidata
-# treats it only as part of Menschliches, Allzumenschliches II. The work is
-# cited on its own siglum in the scholarship and resolves on its own, so it is
-# registered here without a mapping rather than mapped to the wrong entity.
+# No mappings at all, and both absences were checked rather than assumed.
+#
+# Wikidata: a SPARQL query for every work with author = Q9358 (Friedrich
+# Nietzsche) returns no separate item for this title. Wikidata treats it only as
+# part of Menschliches, Allzumenschliches II, so mapping it to the parent would
+# assert something false about what the target denotes (ADR-0006).
+#
+# Wikipedia: no article exists in either language. Checked 2026-08-26 —
+# en.wikipedia.org/wiki/Assorted_Opinions_and_Maxims and the German title both
+# return HTTP 404.
+#
+# The work is cited on its own siglum (VM) in the scholarship and resolves on
+# its own, so it is registered without mappings rather than mismapped.
 
 resolvers:
   - provider: Nietzsche Source

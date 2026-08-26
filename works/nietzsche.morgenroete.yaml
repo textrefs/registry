@@ -24,6 +24,13 @@ mappings:
     status: draft
     created: 2026-08-26
     modified: 2026-08-26
+  - relation: isReferencedBy
+    conforms_to: 'https://en.wikipedia.org/'
+    identifier: 'https://en.wikipedia.org/wiki/The_Dawn_of_Day'
+    source: 'wikidata:Q1947770'
+    status: draft
+    created: 2026-08-26
+    modified: 2026-08-26
 
 resolvers:
   - provider: Nietzsche Source
