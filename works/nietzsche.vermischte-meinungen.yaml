@@ -1,0 +1,40 @@
+work:
+  key: nietzsche.vermischte-meinungen
+  preferred_label: Vermischte Meinungen und Sprüche
+  alternative_labels:
+    - 'VM'
+    - 'Assorted Opinions and Maxims'
+    - 'MA II/1'
+  status: draft
+  created: 2026-08-26
+  modified: 2026-08-26
+  creators:
+    - kind: person
+      family: Nietzsche
+      given: Friedrich
+
+citation_system: integer-section
+
+# No Wikidata mapping. A SPARQL query for every work with author = Q9358
+# (Friedrich Nietzsche) returns no separate item for this title; Wikidata
+# treats it only as part of Menschliches, Allzumenschliches II. The work is
+# cited on its own siglum in the scholarship and resolves on its own, so it is
+# registered here without a mapping rather than mapped to the wrong entity.
+
+resolvers:
+  - provider: Nietzsche Source
+    edition: 'Digitale Kritische Gesamtausgabe (eKGWB), ed. Colli/Montinari (KGW/KSA)'
+    language: de
+    access: open
+    # The siglum is a per-work constant; the aphorism number is the locator.
+    # The path form is server-validated: a siglum-number pair that does not
+    # exist returns a real HTTP 404, so this resolver can be link-checked.
+    url: 'https://www.nietzschesource.org/eKGWB/VM-{section}'
+    last_checked: '2026-08-26'
+
+# Extent found on 2026-08-26 by binary search against the provider's own 404s,
+# then confirmed at the boundary: VM-408 resolves and VM-409 returns 404.
+references_range:
+  - kind: integer
+    from: 1
+    to: 408
