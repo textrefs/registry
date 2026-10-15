@@ -1,0 +1,24 @@
+key: quran-sura-verse
+preferred_label: Sura and verse (Qurʾān)
+description: >-
+  Sura and verse (āya) numbering of the Qurʾān, in the Kufan counting that the
+  1924 Cairo edition fixed and that modern citation follows. 114 suras, 6,236
+  verses. Canonical form: two positive integers without leading zeros,
+  separated by a colon.
+# Named capture groups expose `{sura}` and `{verse}` to URL templates, plus the
+# compiler's zero-padded variants (`{sura02}`, `{sura03}`, `{verse02}`, …) and
+# Roman-numeral suras (`{suraRoman}`).
+#
+# No `chapter_sizes:`. It gates one thing only, the cumulative `{verseGlobal}`
+# counter, and only for systems whose capture groups are named `chapter` and
+# `verse`. This system names them `sura` and `verse`, so the field would be
+# inert. The 114 verse counts live on the work, under `references_range`, where
+# they bound the reference set.
+#
+# The separator is a colon, not the dot every other system in this registry
+# uses. `2:255` is how the Qurʾān is cited; a locator may not contain `/`, but
+# a colon is safe end to end.
+locator_regex: '^(?<sura>[1-9]|[1-9][0-9]|10[0-9]|11[0-4]):(?<verse>[1-9][0-9]{0,2})$'
+status: draft
+created: 2026-08-25
+modified: 2026-08-25
